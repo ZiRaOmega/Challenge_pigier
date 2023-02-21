@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/logo.png);
+    background-size: 5%;
+    backdrop-filter: blur(3px);
+    background-attachment: fixed;
+    height: 100vh;
+
+}
+
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    height: 15vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    background-color: rgba(219,68,55,0.9);
+    color: white;
+}
+
+#logo>a>img{
+    height: clamp(50px,15vh,150px) ;
+}

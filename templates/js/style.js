@@ -78,11 +78,13 @@ buttonnmr4.addEventListener('click',function transision1() {
 // button commencer
 let buttonstart = document.getElementById("start");
 
-
+var NbrPlayer=0
 buttonstart.addEventListener('click',function transision2() {
     document.getElementById("game_set").style.animation = "quit 1s linear";
     setTimeout(()=> {document.getElementById("game_set").style.display = "none"},1000);
     setTimeout(()=> {document.getElementById("gameboard").style.zIndex = '0'},1000);
+    NbrPlayer = numbr_team
+    StartGame()
 });
 
 
@@ -208,39 +210,51 @@ function displayQuestion(dif){
 }
 class Player{
     win = false;
-    constructor(x,y,color,id){
-        this.x = x;
-        this.y = y;
+    constructor(x,y,color,id,width,height){
+        this.x = x-width/2;
+        this.y = y-height/2;
         this.color = color;
         this.id = id;
+        this.width = width
+        this.height=height
     }
 }
 var Players = []
-var canvas = document.getElementById("canvas");
+
+const StartGame= ()=>{
+    var canvas = document.getElementById("canvas");
 /**
  * @type {CanvasRenderingContext2D}
  */
 var ctx = canvas.getContext("2d");
 var svgImage = new Image();
 svgImage.src = "/templates/img/boardgame.png";
-svgImage.onload = function() {
+const PrintPlayers = ()=>{
     ctx.drawImage(svgImage, 0, 0);
-    ctx.strokeStyle = "red";
-    ctx.fillRect(250, 250, 100, 100);
-    ctx.strokeRect(40, 250, 100, 100);
-    ctx.strokeRect(250, 40, 100, 100);
-    ctx.strokeRect(460, 250, 100, 100);
-    ctx.strokeRect(250, 460, 100, 100);
-    ctx.strokeRect(366.7-50, 424.5-50, 100, 100);
-    ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
-    ctx.strokeRect(133-50, 75.4-50, 100, 100);
-    ctx.strokeRect(424.5-50, 133-50, 100, 100);
-    for (let i=0;i<numbr_team;i++){
-        var player = new Player(250,250,"red",i)
-        Players.push(player)
-    }
     for (let i=0;i<Players.length;i++){
         ctx.fillStyle = Players[i].color;
-        ctx.fillRect(Players[i].x, Players[i].y, 100, 100);
+        ctx.fillRect(Players[i].x, Players[i].y, Players[i].width,Players[i].height);
     }
+}
+const InitPLayer = ()=>{
+    if (NbrPlayer>=2){
+        Players.push(new Player(366.7, 424.5, "red", 1,35,35));
+    //ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
+        Players.push(new Player(75.4, 366.7, "blue", 2,35,35));
+    }
+    if (NbrPlayer>=3){
+
+        Players.push(new Player(133, 75.4, "green", 3,35,35));
+    }
+    if (NbrPlayer==4){
+
+        Players.push(new Player(424.5, 133, "yellow", 4,35,35));
+    }
+    PrintPlayers();
+}
+svgImage.onload = function() {
+   InitPLayer();
+}
+
+
 }

@@ -1,14 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Alkalami');
+@import url('http://fonts.cdnfonts.com/css/unifrakturmaguntia');
 body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-image: url(../img/logo.png);
-    background-size: 5%;
-    backdrop-filter: blur(3px);
-    background-attachment: fixed;
+    align-items: center;
+    overflow: hidden;
     height: 100vh;
-
+    width: 100vw;
+    font-family: Alkalami;
 }
 
 header {
@@ -18,13 +19,422 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 80vw;
-    height: 15vh;
+    height: clamp(50px,15vh,100px) ;
     padding-left: 10vw;
     padding-right: 10vw;
-    background-color: rgba(219,68,55,0.9);
+    background-color: rgba(219,68,55,1);
     color: white;
+    z-index: 1;
+    border-bottom: 2px solid white;
+
 }
 
 #logo>a>img{
-    height: clamp(50px,15vh,150px) ;
+    height: clamp(50px,10vh,100px) ;
 }
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60vw;
+}
+
+.nav_items {
+    text-decoration: none;
+    font-family: Alkalami;
+    color: white;
+    font-size: clamp(15px,3vw,30px);
+    font-weight: bolder;
+    height: clamp(50px,15vh,100px) ;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.blue:hover {
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #4285f4;
+    color: #4285f4;
+}
+.vert:hover {
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #0f9d58;
+    color: #0f9d58;
+}
+.jaune:hover {
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid #f4b400;
+    color: #f4b400;
+}
+
+.errorh {
+    font-family: Alkalami;
+    font-size: clamp(30px,5vw,100px);
+    height: clamp(100px,30vh,300px) ;
+    padding: clamp(20px,5vh,50px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(219,68,55,0.9);
+    border-radius: 79% 21% 70% 30% / 61% 42% 58% 39% ; 
+    
+}
+.error_vert {
+    color: #0f9d58;
+}
+
+.error_jaune {
+    color: #f4b400;
+}
+.error_bleu {
+    color: #4285f4;
+}
+.error_rouge {
+    color: white;
+}
+.error_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: clamp(50px,15vh,100px) ;
+}
+.errorh>span {
+    padding: 5px;
+}
+.error {
+    font-family: Alkalami;
+    font-size: clamp(20px,5vw,80px);
+    color: white;
+    background-color: rgba(219,68,55,0.9);
+    padding: clamp(10px,5vh,50px) ;
+    border-radius: 25% 75% 24% 76% / 43% 65% 35% 57% ;
+}
+
+
+
+
+#main{
+  height:100vh;
+  width:100%;  
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-color: rgba(219,68,55,1);
+  position: relative;
+}
+@keyframes quit1 {
+  0%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  50%{
+    transform: translate(0,100%);
+    opacity: 0.5;
+  }
+  100%{
+    transform: translate(0,100%);
+    opacity: 0;
+  }
+}
+@keyframes quit {
+  0%{
+    transform: translate(0,0);
+  }
+  50%{
+    transform: translate(0,-50%);
+  }
+  100%{
+    transform: translate(0,-100%);
+  }
+}
+
+#video{
+    position: absolute;
+}
+
+.annim{
+  width: 100vw;
+  text-align:center;
+  text-transform: uppercase;
+  color: #f4b400; 
+  font-size: 4rem;
+}
+
+.roller{
+  height: 4.125rem;
+  line-height: 4rem;
+  position: relative;
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: #0f9d58;
+}
+
+
+#spare-time{
+  font-size: 2rem;
+  font-style: italic;
+  letter-spacing: 1rem;
+  margin-top: 0;
+  color: #4285f4;
+  
+}
+
+.roller #rolltext {
+  position: absolute;
+  top: 0;
+  animation: slide 5s infinite;  
+}
+
+@keyframes slide {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -4rem;    
+  }
+  50%{
+    top: -8rem;
+  }
+  72.5%{
+    top: -12.25rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #spare-time>img{
+    height: 12.5px;
+  }
+  .annim{
+  text-align:center;
+  text-transform: uppercase;
+  color: #f4b400; 
+  font-size: 2.125rem;
+}
+  
+  .roller{
+  height: 2.6rem; 
+  line-height: 2.125rem;  
+  }
+  
+  #spare-time {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  
+  .roller #rolltext {  
+  animation: slide-mob 5s infinite;  
+}
+  
+  @keyframes slide-mob {
+  0%{
+    top:0;
+  }
+  25%{
+    top: -2.125rem;    
+  }
+  50%{
+    top: -4.25rem;
+  }
+  72.5%{
+    top: -6.375rem;
+  }
+}
+}
+
+#goo{
+  width: 200px;
+  height: 100px;
+  background-color: #f4b400;
+  border: 5px solid #0f9d58;
+  border-radius: 10px;
+  box-shadow: 5px 5px #4285f4;
+  color: #0f9d58;
+  cursor: pointer;
+  outline: none;
+  padding: 5px;
+  font-size: 3.5rem;
+  font-family: Alkalami;
+}
+#goo:active {
+  box-shadow: none;
+  transform: translateX(5px) translateY(5px);
+}
+
+#goo:disabled {
+  cursor: default;
+}
+
+#start{
+    width: 150px;
+    height: 48px;
+    background-color: #f4b400;
+    border: 5px solid #0f9d58;
+    border-radius: 10px;
+    box-shadow: 5px 5px #4285f4;
+    color: #0f9d58;
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
+    font-size: 1.6rem;
+    font-family: Alkalami;
+  }
+  #start:active {
+    box-shadow: none;
+    transform: translateX(5px) translateY(5px);
+  }
+  
+  #start:disabled {
+    cursor: default;
+  }
+
+.boutton_text{
+  position: relative;
+  transform: translate(0,-45px);
+}
+#game_set{
+  height:100vh;
+  width:100%;  
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-image: url(../img/logo.svg);
+  background-size: 77px;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#nmbr{
+  height: clamp(150px,55vh,600px);
+  width: clamp(200px,70vw,800px);
+  background-color: rgba(255,255,255,0.9) ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 2rem;
+  
+}
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+#nmbr::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #0f9d58;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#0f9d58, #0f9d58), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+  animation: rotate 4s linear infinite;
+}
+
+#nmbr::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 5px;
+}
+#set {
+  font-family: Alkalami;
+  font-size: clamp(30px,5vw,60px);
+  background: -webkit-linear-gradient(135deg, #4285f4, #0f9d58, #d53e33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: AnimationName 7s ease infinite;
+  margin-top: clamp(2px,1vh,5px);
+  margin-bottom: clamp(2px,1vh,5px);
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 43%
+  }
+  50% {
+    background-position: 100% 58%
+  }
+  100% {
+    background-position: 0% 43%
+  }
+}
+#choixj{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  column-gap: clamp(10px,10vw,90px);
+}
+
+.joueur {
+  font-family: Alkalami;
+  font-size: 50px;
+  width:80px;
+  height:80px;margin: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+.joueur:active {
+    transform: translateX(5px) translateY(5px);
+  }
+  
+  .joueur:disabled {
+    cursor: default;
+  }
+.joueur2 {
+    color: #0f9d58;
+}
+.joueur3 {
+    color: #d53e33;
+}
+.joueur4 {
+    color: white;
+    background-color: #f4b400;
+    animation: border 2s infinite;
+}
+@keyframes border {
+    0% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%
+      }
+      25% {
+        border-radius: 30% 70% 30% 70% / 70% 30% 70% 30%
+      }
+      50% {
+        border-radius: 12% 88% 10% 90% / 93% 14% 86% 7%
+      }
+      70% {
+        border-radius: 91% 9% 88% 12% / 9% 93% 7% 91% 
+      }
+      100% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%
+      }
+}
+

@@ -113,21 +113,77 @@ class Question {
 }
 var dif =0
 let Questions=[]
+let dif1 = []
+let dif2 = []
+let dif3 = []
+let dif4 = []
+let dif5 = []
+let dif6 = []
 
 async function getAllQuestions(){
     await fetch('/templates/result.json')
     .then(response => response.json())
     .then(data => {
         console.log(data)
+        
         data.forEach(element => {
-            Questions.push(new Question(element.Intitule,element.Choix1,element["Choix 2"],element["Choix 3"],element["Choix 4"],element.Reponse,element.Difficulte))
+            var quest = new Question(element.Intitulé,element["Choix 1"],element["Choix 2"],element["Choix 3"],element["Choix 4"],element.Réponse,element.Difficulté)
+            if (element.Difficulté == 1){
+                dif1.push(quest)
+            }else if (element.Difficulté == 2){
+                dif2.push(quest)
+            }else if (element.Difficulté == 3){
+                dif3.push(quest)
+                
+            }else if (element.Difficulté == 4){
+                dif4.push(quest)
+                
+            }else if (element.Difficulté == 5){
+                dif5.push(quest)
+                
+            }else if (element.Difficulté == 6){
+                dif6.push(quest)
+                
+            }
+            Questions.push(quest)
         });
     }
     )
 
 }
 
-function getQuestion(){
+function getQuestion(dif){
+    if (dif == 1){
+        var random = Math.floor(Math.random() * dif1.length);
+        var question = dif1[random]
+        
+        return question
+    }else if (dif == 2){
+        var random = Math.floor(Math.random() * dif2.length);
+        var question = dif2[random]
+        
+        return question
+    }else if (dif == 3){
+        var random = Math.floor(Math.random() * dif3.length);
+        var question = dif3[random]
+        
+        return question
+    }else if (dif == 4){
+        var random = Math.floor(Math.random() * dif4.length);
+        var question = dif4[random]
+        
+        return question
+    }else if (dif == 5){
+        var random = Math.floor(Math.random() * dif5.length);
+        var question = dif5[random]
+        
+        return question
+    }else if (dif == 6){
+        var random = Math.floor(Math.random() * dif6.length);
+        var question = dif6[random]
+        
+        return question
+    }
     var random = Math.floor(Math.random() * Questions.length);
     var question = Questions[random]
     if(question.dif == dif){
@@ -138,8 +194,8 @@ function getQuestion(){
     }
 }
 
-function displayQuestion(){
-    var question = getQuestion()
+function displayQuestion(dif){
+    var question = getQuestion(dif)
     document.getElementById("question").innerHTML = question.text
     document.getElementById("choice1").innerHTML = question.choices1
     document.getElementById("choice2").innerHTML = question.choices2

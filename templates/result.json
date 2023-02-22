@@ -1,0 +1,900 @@
+[
+		{
+			"Choix 1": "Oui",
+			"Choix 2": "Non",
+			"Choix 3": "Ca dépend",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Est ce que une méta description est utile ?",
+			"Questions": "1",
+			"Réponse": "Oui"
+		},
+		{
+			"Choix 1": "H2",
+			"Choix 2": "H3",
+			"Choix 3": "H1",
+			"Choix 4": "H7",
+			"Difficulté": "1",
+			"Intitulé": "Quelle balise doit être intégrée une seule fois sur une page internet ?",
+			"Questions": "2",
+			"Réponse": "H1"
+		},
+		{
+			"Choix 1": "Google Panda",
+			"Choix 2": "Humming Bird",
+			"Choix 3": "Penguin",
+			"Choix 4": "Google Pigeon",
+			"Difficulté": "3",
+			"Intitulé": "Quel est l'algorithme qui apporte plus de qualité et de pertinence au référencement local ?",
+			"Questions": "3",
+			"Réponse": "Google Pigeon"
+		},
+		{
+			"Choix 1": "Le jus de fruit que vous buvez en travaillant sur votre référencement",
+			"Choix 2": "La valeur que les moteurs de recherche attribuent à un lien externe pointant vers votre site web",
+			"Choix 3": "Un code HTML utilisé pour créer des liens",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Qu'est-ce que le \"link juice\" ?",
+			"Questions": "4",
+			"Réponse": "La valeur que les moteurs de recherche attribuent à un lien externe pointant vers votre site web"
+		},
+		{
+			"Choix 1": "Une balise HTML utilisée pour créer des listes de mots clés",
+			"Choix 2": "Une balise HTML utilisée pour décrire le contenu d'une page web",
+			"Choix 3": "Une balise HTML utilisée pour ajouter des images à une page web",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Qu'est-ce qu'une balise meta description ?",
+			"Questions": "5",
+			"Réponse": "Une balise HTML utilisée pour décrire le contenu d'une page web"
+		},
+		{
+			"Choix 1": "Du contenu créé spécialement pour être dupliqué sur plusieurs pages web",
+			"Choix 2": "Du contenu identique ou similaire présent sur plusieurs pages web",
+			"Choix 3": "Du contenu caché aux utilisateurs mais visible pour les moteurs de recherche",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "Qu'est-ce que le \"duplicate content\" ?",
+			"Questions": "6",
+			"Réponse": "Du contenu identique ou similaire présent sur plusieurs pages web"
+		},
+		{
+			"Choix 1": "Le temps nécessaire pour qu'une page web soit indexée par les moteurs de recherche",
+			"Choix 2": "Le temps nécessaire pour qu'une page web soit affichée complètement sur le navigateur d'un utilisateur",
+			"Choix 3": " Le temps nécessaire pour qu'une page web soit mise à jour avec du nouveau contenu",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Qu'est-ce que le \"temps de chargement\" d'une page web ?",
+			"Questions": "7",
+			"Réponse": "Le temps nécessaire pour qu'une page web soit affichée complètement sur le navigateur d'un utilisateur"
+		},
+		{
+			"Choix 1": " Du contenu qui est toujours d'actualité et pertinent pour les lecteurs",
+			"Choix 2": "Du contenu qui a été publié une seule fois et qui ne sera jamais mis à jour",
+			"Choix 3": " Du contenu qui est uniquement destiné à être publié en ligne",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Qu'est-ce que le \"contenu evergreen\" ?",
+			"Questions": "8",
+			"Réponse": " Du contenu qui est toujours d'actualité et pertinent pour les lecteurs"
+		},
+		{
+			"Choix 1": "Un lien interne qui pointe vers une autre page de votre site web",
+			"Choix 2": "Un lien externe pointant vers votre site web à partir d'un autre site web",
+			"Choix 3": "Un lien qui pointe vers un site web qui n'existe plus",
+			"Choix 4": "",
+			"Difficulté": "4",
+			"Intitulé": "Qu'est ce qu'un backlink ?",
+			"Questions": "9",
+			"Réponse": "Un lien externe pointant vers votre site web à partir d'un autre site web"
+		},
+		{
+			"Choix 1": "Un fichier stockant nos informations de navigation en mémoire",
+			"Choix 2": "Un biscuit au chocolat",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Qu'est-ce qu'un cookie ?",
+			"Questions": "10",
+			"Réponse": "Un fichier stockant nos informations de navigation en mémoire"
+		},
+		{
+			"Choix 1": "2 secondes",
+			"Choix 2": "3 secondes",
+			"Choix 3": "4 secondes",
+			"Choix 4": "5 secondes",
+			"Difficulté": "3",
+			"Intitulé": "Quel est le temps de chargement recommandé sans être pénalisé par Google pour afficher une page web ?",
+			"Questions": "11",
+			"Réponse": "2 secondes"
+		},
+		{
+			"Choix 1": "\u003chead\u003e et \u003cbody\u003e",
+			"Choix 2": "\u003ctête\u003e et \u003ccorps\u003e",
+			"Choix 3": "\u003cface\u003e et \u003cbody\u003e",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Quelles sont les balises structurantes d'une page HTML ?",
+			"Questions": "12",
+			"Réponse": "\u003chead\u003e et \u003cbody\u003e"
+		},
+		{
+			"Choix 1": "Fonctionnement des moteurs de recherche",
+			"Choix 2": "Optimisation des entrées de recherche",
+			"Choix 3": "Optimisation des moteurs de recherche",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Que signifie \"SEO\" (en français) ?",
+			"Questions": "13",
+			"Réponse": "Optimisation des moteurs de recherche"
+		},
+		{
+			"Choix 1": "Pour un lien cliquable ",
+			"Choix 2": "Pour les titres d'oeuvre",
+			"Choix 3": "Pour faire joli",
+			"Choix 4": "Il ne faut rien souligner ",
+			"Difficulté": "5",
+			"Intitulé": "Dans quel cas doit-on souligner un texte ?",
+			"Questions": "14",
+			"Réponse": "Pour un lien cliquable "
+		},
+		{
+			"Choix 1": "Le netlinking",
+			"Choix 2": "Les audits SEO ",
+			"Choix 3": "Le marketing de contenu",
+			"Choix 4": "",
+			"Difficulté": "4",
+			"Intitulé": "Qu'est ce qui n'est pas considéré comme appartenant au référencement technique ?",
+			"Questions": "15",
+			"Réponse": "Le marketing de contenu"
+		},
+		{
+			"Choix 1": "Attention Intégrale Dominante Agréable ",
+			"Choix 2": "Attention Intérêt Désir Action",
+			"Choix 3": "Artificial Intelligence Dynamic Action",
+			"Choix 4": "Approbation Indication Direction Avertissement ",
+			"Difficulté": "4",
+			"Intitulé": "Que signifie l'acronyme AIDA ?",
+			"Questions": "16",
+			"Réponse": ""
+		},
+		{
+			"Choix 1": "L'emplacement du serveur de votre site web",
+			"Choix 2": "Une adresse indexale et correctement formatée sur votre site Web",
+			"Choix 3": "Le nombre d'abonnées Facebook que vous avez dans la région",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Lequel de ces facteurs affectera votre classement sur les requêtes locales ?",
+			"Questions": "17",
+			"Réponse": ""
+		},
+		{
+			"Choix 1": "Search Engine Amelioration",
+			"Choix 2": "Sieste Et Apéro",
+			"Choix 3": "Search Engine Advertising",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Que signifie l'acronyme SEA ?",
+			"Questions": "18",
+			"Réponse": "Search Engine Advertising"
+		},
+		{
+			"Choix 1": "65 caractères",
+			"Choix 2": "40 caractères",
+			"Choix 3": "70 caractères",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "Combien de caractères maximum doit comporter la balise title ?",
+			"Questions": "19",
+			"Réponse": "65 caractères"
+		},
+		{
+			"Choix 1": "Inspecteur Google",
+			"Choix 2": "Googlebot",
+			"Choix 3": "Mr Robot",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Comment s'appelle le robot du moteur de recherche Google ?",
+			"Questions": "20",
+			"Réponse": "Googlebot"
+		},
+		{
+			"Choix 1": "Search Engine Result Page",
+			"Choix 2": "Search Engine Ranking Page",
+			"Choix 3": "Sieste Et Repos Possible",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Que signifie « SERP » ?",
+			"Questions": "21",
+			"Réponse": "Search Engine Result Page"
+		},
+		{
+			"Choix 1": "indiquer le résumé de la page",
+			"Choix 2": "indiquer le titre de la page",
+			"Choix 3": "faire apparaitre un titre de musique sur son site",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "A quoi sert la balise meta title ?",
+			"Questions": "22",
+			"Réponse": "indiquer le titre de la page"
+		},
+		{
+			"Choix 1": "Un algorithme de classement utilisé par Google pour déterminer l'importance d'une page web",
+			"Choix 2": "Le nom du fondateur de Google",
+			"Choix 3": "Le nombre de pages web indexées par Google",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Qu’est-ce que le PageRank ?",
+			"Questions": "23",
+			"Réponse": "Un algorithme de classement utilisé par Google pour déterminer l'importance d'une page web"
+		},
+		{
+			"Choix 1": "Un nageur professionnel",
+			"Choix 2": "Un logiciel destiné à explorer les ressources d'un site web en suivant les liens que ses pages contiennent.",
+			"Choix 3": "Un créateur de site web",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Qu’est-ce qu’un crawler ?",
+			"Questions": "24",
+			"Réponse": "Un logiciel destiné à explorer les ressources d'un site web en suivant les liens que ses pages contiennent."
+		},
+		{
+			"Choix 1": "Donner une description de l'image si elle n'apparaît  pas à l'écran",
+			"Choix 2": "Dupliquer du texte",
+			"Choix 3": "Créer un résumé de la page",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "A quoi sert la balise alt ?",
+			"Questions": "25",
+			"Réponse": "Donner une description de l'image si elle n'apparaît  pas à l'écran"
+		},
+		{
+			"Choix 1": " Une carte de votre site web qui aide les utilisateurs à trouver leur chemin sur votre site",
+			"Choix 2": "Un fichier XML qui contient une liste de toutes les pages de votre site web",
+			"Choix 3": " Une page web qui contient des liens vers toutes les pages de votre site web",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Qu’est-ce qu’un sitemap ?",
+			"Questions": "26",
+			"Réponse": "Un fichier XML qui contient une liste de toutes les pages de votre site web"
+		},
+		{
+			"Choix 1": "Le corps du texte principal d’une page Web",
+			"Choix 2": "Le texte visible d’un hyperlien pointant vers une autre page Web",
+			"Choix 3": "La partie dominante de la balise titre",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Qu’est-ce qu’un texte d’ancre ?",
+			"Questions": "27",
+			"Réponse": "Le texte visible d’un hyperlien pointant vers une autre page Web"
+		},
+		{
+			"Choix 1": "La balise \u003cmeta description\u003e",
+			"Choix 2": "La balise \u003cmeta keywords\u003e",
+			"Choix 3": "La balise \u003ctitle\u003e",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Dans la page de résultats Google, à quelle balise correspond la ligne principale en bleu ?",
+			"Questions": "28",
+			"Réponse": "La balise \u003ctitle\u003e"
+		},
+		{
+			"Choix 1": "Un paiement obligatoire",
+			"Choix 2": "Une redirection permanente",
+			"Choix 3": "Une erreur de syntaxe dans la demande",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Que signifie le code redirection 301 ?",
+			"Questions": "29",
+			"Réponse": "Une redirection permanente"
+		},
+		{
+			"Choix 1": "Google Ads",
+			"Choix 2": "Google Analytics",
+			"Choix 3": "GoogleTrends",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Quel outil Google permet d'acheter des mots clés afin de remonter dans les résultats de recherche ?",
+			"Questions": "30",
+			"Réponse": "Google Ads"
+		},
+		{
+			"Choix 1": "Salut Monsieur, Alors Rien Trouvé ?",
+			"Choix 2": "Sauce Mayo Algérienne Relevée Traditionnelle",
+			"Choix 3": "Spécifique Mesurable Atteignable Réaliste Temporel",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Que signifie l'acronyme SMART ?",
+			"Questions": "31",
+			"Réponse": "Spécifique Mesurable Atteignable Réaliste Temporel"
+		},
+		{
+			"Choix 1": "Un site responsive",
+			"Choix 2": "Un site responsable",
+			"Choix 3": "Un site télé-adapté",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Comment appelle-t-on un site adapté aux mobiles/tablettes ?",
+			"Questions": "32",
+			"Réponse": "Un site responsive"
+		},
+		{
+			"Choix 1": "Universal Resource Locator",
+			"Choix 2": "Uniform Resource Locator",
+			"Choix 3": "Universal Resource Location",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Que signifie URL ?",
+			"Questions": "33",
+			"Réponse": "Uniform Resource Locator"
+		},
+		{
+			"Choix 1": "Il permet à Google d’explorer n’importe quelle page web",
+			"Choix 2": "Il interdit à Google d’explorer les pages Web",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "A quoi sert le fichier \"robot.twt\" ?",
+			"Questions": "34",
+			"Réponse": "Il interdit à Google d’explorer les pages Web"
+		},
+		{
+			"Choix 1": "Informationnelle",
+			"Choix 2": "Transactionnelle",
+			"Choix 3": "De navigation",
+			"Choix 4": "",
+			"Difficulté": "6",
+			"Intitulé": "Le mot \"Login\" indique une intention de recherche :",
+			"Questions": "35",
+			"Réponse": "De navigation"
+		},
+		{
+			"Choix 1": "120 caractères",
+			"Choix 2": "40 caractères",
+			"Choix 3": "65 caractères",
+			"Choix 4": "",
+			"Difficulté": "4",
+			"Intitulé": "Quelle est la longueur approximative d'une balise title sur Google ?",
+			"Questions": "36",
+			"Réponse": "65 caractères"
+		},
+		{
+			"Choix 1": "Call To Action ",
+			"Choix 2": "Choice To Act ",
+			"Choix 3": "Cool Tes Affaires",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Que signifie CTA ?",
+			"Questions": "37",
+			"Réponse": "Call To Action "
+		},
+		{
+			"Choix 1": "\u003cMeta Name=”description” content=”description de la page”\u003e",
+			"Choix 2": "\u003cMeta Name”description” content=”description de la page”\u003e",
+			"Choix 3": "\u003cMeta Name=description content=”description de la page”\u003e",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "Comment se rédige la balise metadescription ? ",
+			"Questions": "38",
+			"Réponse": "\u003cMeta Name=”description” content=”description de la page”\u003e"
+		},
+		{
+			"Choix 1": "Une base d'informations qui permet à Google de fournir des réponses immédiates aux questions qui lui sont posées",
+			"Choix 2": "Un outil créé par Google pour intégrer des graphiques à son site internet",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "4",
+			"Intitulé": "Qu'est ce que le Google Knowledge Graph ? ",
+			"Questions": "39",
+			"Réponse": "Une base d'informations qui permet à Google de fournir des réponses immédiates aux questions qui lui sont posées"
+		},
+		{
+			"Choix 1": "Oui",
+			"Choix 2": "Non",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Dois je optimiser mon nom de domaine en y incluant des mots clés ?",
+			"Questions": "40",
+			"Réponse": "Oui"
+		},
+		{
+			"Choix 1": "Il n'existe pas de nombre adéquat",
+			"Choix 2": "Il en faut 4",
+			"Choix 3": "Il en faut 10",
+			"Choix 4": "il en faut 50",
+			"Difficulté": "3",
+			"Intitulé": "Comment savoir si j'utilise un nombre adéquat de mots clés sur une page ?",
+			"Questions": "41",
+			"Réponse": "Il n'existe pas de nombre adéquat"
+		},
+		{
+			"Choix 1": "Internes = liens qui figurent sur une page de votre site Externes= liens qui proviennent d'autres sites",
+			"Choix 2": "Il n'y a pas de différence ",
+			"Choix 3": "Externes = liens qui figurent sur une page de votre site Internes = liens qui proviennent d'autres sites",
+			"Choix 4": "",
+			"Difficulté": "2",
+			"Intitulé": "Quelle est la différence entre les liens internes et externes ?",
+			"Questions": "42",
+			"Réponse": "Internes = liens qui figurent sur une page de votre site Externes= liens qui proviennent d'autres sites"
+		},
+		{
+			"Choix 1": "5",
+			"Choix 2": "Il faut éviter d'insérer trop de liens",
+			"Choix 3": "50",
+			"Choix 4": "100",
+			"Difficulté": "3",
+			"Intitulé": "Combien de liens internes mes pages doivent-elles afficher ?",
+			"Questions": "43",
+			"Réponse": "Il faut éviter d'insérer trop de liens"
+		},
+		{
+			"Choix 1": "Oui",
+			"Choix 2": "Non",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Dois je savoir coder pour procéder moi-meme à l'optimisation SEO ?",
+			"Questions": "44",
+			"Réponse": "Non"
+		},
+		{
+			"Choix 1": "Explorer = le moteur de recherche passe en revue le contenu de notre site  Indéxer = parcourir, analyser, répertorier et classer les pages d'un site",
+			"Choix 2": "Je sais pas ",
+			"Choix 3": "Indéxer= le moteur de recherche passe en revue le contenu de notre site Explorer = parcourir, analyser, répertorier et classer les pages d'un site",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "Quelle est la différence entre indexer et explorer ?",
+			"Questions": "45",
+			"Réponse": "Explorer = le moteur de recherche passe en revue le contenu de notre site  Indéxer = parcourir, analyser, répertorier et classer les pages d'un site"
+		},
+		{
+			"Choix 1": "Social Media Optimization",
+			"Choix 2": "Social Marketing Optimization",
+			"Choix 3": "Social Management Optimization",
+			"Choix 4": "Social Media Organisation",
+			"Difficulté": "3",
+			"Intitulé": "Qu'est ce que le SMO?",
+			"Questions": "46",
+			"Réponse": "Social Media Optimization"
+		},
+		{
+			"Choix 1": "Comprendre son marché, son environnement et ses concurrents",
+			"Choix 2": "Comprendre son persona, ses besoins et son language",
+			"Choix 3": "Comprendre son marketing, son entreprise",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "Comment choisir les bons mots clés ?",
+			"Questions": "47",
+			"Réponse": "Comprendre son persona, ses besoins et son language"
+		},
+		{
+			"Choix 1": "Google Keyword Planner",
+			"Choix 2": "Google Analytics",
+			"Choix 3": "Google Trend",
+			"Choix 4": "",
+			"Difficulté": "4",
+			"Intitulé": "Quel outil utiliser pour analyser les mots-clés ?",
+			"Questions": "48",
+			"Réponse": "Google Keyword Planner"
+		},
+		{
+			"Choix 1": "Un mot-clé qui correspond au sujet",
+			"Choix 2": "Un mot-clé qui ne correspond pas au sujet ",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "1",
+			"Intitulé": "Qu'est ce qu'un bon mot clé?",
+			"Questions": "49",
+			"Réponse": "Un mot-clé qui correspond au sujet"
+		},
+		{
+			"Choix 1": "2 fois",
+			"Choix 2": "5 fois",
+			"Choix 3": "1 fois",
+			"Choix 4": "10 fois",
+			"Difficulté": "2",
+			"Intitulé": "Combien de fois on peut utiliser la balise H1 par page?",
+			"Questions": "50",
+			"Réponse": "1 fois"
+		},
+		{
+			"Choix 1": "Dans la partie \u003chead\u003e",
+			"Choix 2": "Dans la partie \u003cfooter\u003e",
+			"Choix 3": "Dans la partie \u003cbody\u003e",
+			"Choix 4": "",
+			"Difficulté": "3",
+			"Intitulé": "Où apparait le contenu de la balise title ?",
+			"Questions": "51",
+			"Réponse": "Dans la partie \u003chead\u003e"
+		},
+		{
+			"Choix 1": "Infliger une pénalité aux sites web qui utilisent du contenu dupliqué",
+			"Choix 2": "Donner un bonus aux sites web qui utilisent du contenu dupliqué",
+			"Choix 3": "",
+			"Choix 4": "",
+			"Difficulté": "5",
+			"Intitulé": "A quoi sert Google Panda ?",
+			"Questions": "52",
+			"Réponse": "Infliger une pénalité aux sites web qui utilisent du contenu dupliqué"
+		},
+		{
+			"Choix 1": "Pénaliser les sites utilisant des techniques de netlinking non conformes à celles préconisées",
+			"Choix 2": "Récompenser les sites créés par les inuits",
+			"Choix 3": "Geler l'accès aux sites qui abusent du netlinking",
+			"Difficulté": "3",
+			"Intitulé": "Quel est l'objectif de Google Pingouin ?",
+			"Questions": "53",
+			"Réponse": "Pénaliser les sites utilisant des techniques de netlinking non conformes à celles préconisées"
+		},
+		{
+			"Choix 1": "Les algorithmes",
+			"Choix 2": "Les crawlers",
+			"Choix 3": "Les Quality Raters",
+			"Difficulté": "4",
+			"Intitulé": "L’indexation des sites Web sur Internet est effectuée par ?",
+			"Questions": "54",
+			"Réponse": "Les crawlers"
+		},
+		{
+			"Choix 1": "Une brève description de la page Web qui permet à un moteur de recherche de connaître son sujet",
+			"Choix 2": " Une balise où l’on ajoute le mot-clé d’une page Web",
+			"Choix 3": "Une description de votre marque qui est affichée au-dessus de la balise titre",
+			"Difficulté": "3",
+			"Intitulé": "Qu’est-ce qu’une balise meta description ?",
+			"Questions": "55",
+			"Réponse": "Une brève description de la page Web qui permet à un moteur de recherche de connaître son sujet"
+		},
+		{
+			"Choix 1": " Les espaces",
+			"Choix 2": "Les traits d’union (-)",
+			"Choix 3": "Les tirets bas (_)",
+			"Difficulté": "3",
+			"Intitulé": "Quels caractères faut-il privilégier pour séparer les mots d’une URL ?",
+			"Questions": "56",
+			"Réponse": "Les traits d’union (-)"
+		},
+		{
+			"Choix 1": "Les liens provenant du netlinking",
+			"Choix 2": "Les liens d’autopromotion",
+			"Choix 3": "Les liens éditoriaux naturels",
+			"Difficulté": "5",
+			"Intitulé": "Quel type de lien est considéré comme apportant le plus de valeur ?",
+			"Questions": "57",
+			"Réponse": "Les liens éditoriaux naturels"
+		},
+		{
+			"Choix 1": "Ne compte pas comme un vote d’approbation, mais transmet le jus de référencement",
+			"Choix 2": "Ne transmet pas le jus de référencement, mais compte comme un vote d’approbation",
+			"Choix 3": "Ne transmet pas le jus de référencement et ne compte pas comme un vote d’approbation",
+			"Difficulté": "6",
+			"Intitulé": "L’attribut No-follow :",
+			"Questions": "58",
+			"Réponse": "Ne transmet pas le jus de référencement, mais compte comme un vote d’approbation"
+		},
+		{
+			"Choix 1": "Parce que leurs utilisateurs ont déjà une idée précise de ce qu’ils recherchent",
+			"Choix 2": "Parce qu’ils sont très populaires",
+			"Choix 3": "Parce que la concurrence y est plus faible",
+			"Difficulté": "4",
+			"Intitulé": "Pourquoi les mots-clés appartenant à la longue traîne sont-ils plus susceptibles d’encourager les achats ?",
+			"Questions": "59",
+			"Réponse": "Parce que leurs utilisateurs ont déjà une idée précise de ce qu’ils recherchent"
+		},
+		{
+			"Choix 1": "Cela ne fait aucune différence",
+			"Choix 2": "Oui, Google préfère les sites responsive design, adaptés à tous les appareils",
+			"Choix 3": " Non, Google n’y accorde pas d’importance",
+			"Difficulté": "2",
+			"Intitulé": "Faut-il privilégier le responsive design ?",
+			"Questions": "60",
+			"Réponse": "Oui, Google préfère les sites responsive design, adaptés à tous les appareils"
+		},
+		{
+			"Choix 1": "Le lien entrant pointant vers une page d’un site Web figurant parmi l’objet du site Web",
+			"Choix 2": "Le texte utilisé pour décrire le lien entrant vers une page d’un site Web",
+			"Choix 3": " Le nombre total de liens entrants vers une page d’un site Web",
+			"Difficulté": "5",
+			"Intitulé": "Parmi les indicateurs suivants, lequel a une incidence sur le PageRank d’un site ?",
+			"Questions": "61",
+			"Réponse": " Le nombre total de liens entrants vers une page d’un site Web"
+		},
+		{
+			"Choix 1": "Les techniques Black Hat",
+			"Choix 2": " Les techniques Silver Hat",
+			"Choix 3": "Les techniques Grey Hat",
+			"Difficulté": "6",
+			"Intitulé": "Comment sont appelées les stratégies SEO dont la réputation et la validité sont non évaluées ?",
+			"Questions": "62",
+			"Réponse": "Les techniques Grey Hat"
+		},
+		{
+			"Choix 1": " ... proviennent des sites Web faisant autorité",
+			"Choix 2": "...sont d’une nature volontaire",
+			"Choix 3": "... sont des liens bidirectionnels (liens réciproques)",
+			"Difficulté": "5",
+			"Intitulé": "Complétez la phrase suivante : les liens naturels…",
+			"Questions": "63",
+			"Réponse": "...sont d’une nature volontaire"
+		},
+		{
+			"Choix 1": "0,01- 0,1%",
+			"Choix 2": "0,1 - 1%",
+			"Choix 3": "3 - 4%",
+			"Difficulté": "6",
+			"Intitulé": "Parmi les éléments suivants, lequel correspond à une densité de mots-clés appropriés ?",
+			"Questions": "64",
+			"Réponse": "3 - 4%"
+		},
+		{
+			"Choix 1": "La fréquence de mise à jour des contenus",
+			"Choix 2": "Le nombre de pages Web contenant des informations pertinentes sur le thème principal",
+			"Choix 3": "Le nombre de liens naturels entrants liés au thème (ou aux mots-clés)",
+			"Difficulté": "5",
+			"Intitulé": "Parmi les facteurs suivants, lequel est pris en compte par Google pour déterminer si un site Web fait autorité ou non ?",
+			"Questions": "65",
+			"Réponse": "Le nombre de liens naturels entrants liés au thème (ou aux mots-clés)"
+		},
+		{
+			"Choix 1": "La balise meta description",
+			"Choix 2": "Le corps du texte",
+			"Choix 3": "La balise meta keywords",
+			"Difficulté": "5",
+			"Intitulé": "Choisissez l’élément dans lequel inclure votre/vos mot(s) clé(s) n’est pas primordial ?",
+			"Questions": "66",
+			"Réponse": "La balise meta keywords"
+		},
+		{
+			"Choix 1": "Le SEO On page et Off page",
+			"Choix 2": "Le SEO On page et Front page",
+			"Choix 3": " Le SEO In page",
+			"Difficulté": "5",
+			"Intitulé": "Parmi les techniques suivantes, laquelle relève du SEO ?",
+			"Questions": "67",
+			"Réponse": "Le SEO On page et Off page"
+		},
+		{
+			"Choix 1": "Cibler les synonymes du mot-clé principal",
+			"Choix 2": " Cibler uniquement les mots-clés les plus recherchés",
+			"Choix 3": "Optimiser au moins cinq mots-clés par page Web",
+			"Difficulté": "4",
+			"Intitulé": "Choisissez parmi la meilleure stratégie de sélection et de placement de mots-clés ?",
+			"Questions": "68",
+			"Réponse": "Optimiser au moins cinq mots-clés par page Web"
+		},
+		{
+			"Choix 1": "Le nombre de publicités",
+			"Choix 2": "L’autorité du domaine",
+			"Choix 3": "Le nombre de liens",
+			"Difficulté": "4",
+			"Intitulé": "Lequel de ces indicateurs n’est pas utilisé dans une stratégie de netlinking ?",
+			"Questions": "69",
+			"Réponse": "Le nombre de publicités"
+		},
+		{
+			"Choix 1": "\u003ca href-\"http://www.google.com\"\u003e mon backlink\u003c/a\u003e",
+			"Choix 2": "\u003ca href=\"http://www.google.com\"\u003e mon backlink\u003c/a\u003e",
+			"Choix 3": "\u003ca href=\"http://www.google.com\"\u003e mon backlink\u003ca\u003e",
+			"Difficulté": "5",
+			"Intitulé": "Quel extrait HTML est correctement formaté ?",
+			"Questions": "70",
+			"Réponse": "\u003ca href=\"http://www.google.com\"\u003e mon backlink\u003c/a\u003e"
+		},
+		{
+			"Choix 1": "Bourrage de mots-clés",
+			"Choix 2": "Fraude au clic",
+			"Choix 3": "Optimisation White Hat",
+			"Difficulté": "4",
+			"Intitulé": "La surutilisation d’un mot-clé ciblé sur une page Web est qualifiée de :",
+			"Questions": "71",
+			"Réponse": "Bourrage de mots-clés"
+		},
+		{
+			"Choix 1": "peuvent indirectement affecter votre optimisation et votre référencement, par le biais du netlinking",
+			"Choix 2": "n’ont pas d’incidence sur vos efforts d’optimisation et sur votre stratégie SEO",
+			"Choix 3": "doivent utiliser les mêmes mots-clés que vos pages Web individuelles",
+			"Difficulté": "4",
+			"Intitulé": "Choisissez la meilleure affirmation : Les réseaux sociaux …",
+			"Questions": "72",
+			"Réponse": "peuvent indirectement affecter votre optimisation et votre référencement, par le biais du netlinking"
+		},
+		{
+			"Choix 1": "Chaque optimisation est faite correctement sur le site Web",
+			"Choix 2": "La vitesse de chargement du site Web est lente",
+			"Choix 3": "Les visiteurs restent longtemps sur le site Web",
+			"Difficulté": "4",
+			"Intitulé": "Laquelle des affirmations ci-dessous entraîne un taux de rebond élevé ?",
+			"Questions": "73",
+			"Réponse": "La vitesse de chargement du site Web est lente"
+		},
+		{
+			"Choix 1": "Des mots qui sont contextuellement liés à votre mot-clé principal",
+			"Choix 2": "Des synonymes ou des mots-clés ayant la même signification",
+			"Choix 3": "Des mots qui appartiennent à la même catégorie",
+			"Difficulté": "6",
+			"Intitulé": "Que sont les mots-clés LSI ?",
+			"Questions": "74",
+			"Réponse": "Des mots qui sont contextuellement liés à votre mot-clé principal"
+		},
+		{
+			"Choix 1": "Identifier les mots-clés et analyser leur compétitivité",
+			"Choix 2": "Utiliser un outil de recherche pour obtenir des idées de mots-clés et supprimer les mots-clés génériques",
+			"Choix 3": "Utiliser un outil de recherche pour découvrir les liens rompus et les pages d’erreur",
+			"Difficulté": "4",
+			"Intitulé": "Quelle action ne fait pas partie du processus d’analyse des mots-clés ?",
+			"Questions": "75",
+			"Réponse": "Utiliser un outil de recherche pour découvrir les liens rompus et les pages d’erreur"
+		},
+		{
+			"Choix 1": "301",
+			"Choix 2": "404",
+			"Choix 3": "503",
+			"Difficulté": "6",
+			"Intitulé": "Quel code privilégier lorsque votre site Web est en hors service pour maintenance ?",
+			"Questions": "76",
+			"Réponse": "503"
+		},
+		{
+			"Choix 1": "PageRank",
+			"Choix 2": "RankBrain",
+			"Choix 3": "Google Phantom",
+			"Difficulté": "6",
+			"Intitulé": "Comment s’appelle l’intelligence artificielle qui traite désormais une grande partie des requêtes sur Google ?",
+			"Questions": "77",
+			"Réponse": "RankBrain"
+		},
+		{
+			"Choix 1": "Page Authority, Domain Authority et Page Rank",
+			"Choix 2": "Personal Authority, Domain Age, Page Rename",
+			"Choix 3": "Page Authority, Domain Age, Page Rank",
+			"Difficulté": "6",
+			"Intitulé": "Que signifient les acronymes PA, DA et PR ?",
+			"Questions": "78",
+			"Réponse": "Page Authority, Domain Authority et Page Rank"
+		},
+		{
+			"Choix 1": "L’optimisation de la balise ALT",
+			"Choix 2": "Publier fréquemment du contenu de qualité",
+			"Choix 3": "La diffusion des mots-clés",
+			"Difficulté": "6",
+			"Intitulé": "L’optimisation On-page comprend :",
+			"Questions": "79",
+			"Réponse": "Publier fréquemment du contenu de qualité"
+		},
+		{
+			"Choix 1": "Un temps de chargement des pages Web lent",
+			"Choix 2": "Des contenus uniques et pertinents qui apportent une valeur ajoutée",
+			"Choix 3": "Des titres de page de moins de 70 caractères",
+			"Difficulté": "4",
+			"Intitulé": "Qu’est-ce que Google valorise lorsqu’il indexe un site Web ?",
+			"Questions": "80",
+			"Réponse": "Des contenus uniques et pertinents qui apportent une valeur ajoutée"
+		},
+		{
+			"Choix 1": "Search Engine Optimization",
+			"Choix 2": "Search Engine Organization",
+			"Choix 3": "Save Energy Obviously",
+			"Difficulté": "2",
+			"Intitulé": "Que signifie SEO (en anglais) ?",
+			"Questions": "81",
+			"Réponse": "Search Engine Optimization"
+		},
+		{
+			"Choix 1": "TRUE",
+			"Choix 2": "FALSE",
+			"Choix 3": "",
+			"Difficulté": "1",
+			"Intitulé": "La balise title a un rôle direct sur le référencement d’une page",
+			"Questions": "82",
+			"Réponse": "TRUE"
+		},
+		{
+			"Choix 1": "FALSE",
+			"Choix 2": "TRUE",
+			"Choix 3": "",
+			"Difficulté": "2",
+			"Intitulé": "la balise meta-keyword est cruciale en SEO",
+			"Questions": "83",
+			"Réponse": "FALSE"
+		},
+		{
+			"Choix 1": "TRUE",
+			"Choix 2": "FALSE",
+			"Choix 3": "",
+			"Difficulté": "2",
+			"Intitulé": "la longueur du contenu a une importance en SEO",
+			"Questions": "84",
+			"Réponse": "TRUE"
+		},
+		{
+			"Choix 1": "FALSE",
+			"Choix 2": "TRUE",
+			"Choix 3": "",
+			"Difficulté": "2",
+			"Intitulé": "« backlink » et « lien entrant » sont 2 choses différentes ",
+			"Questions": "85",
+			"Réponse": "FALSE"
+		},
+		{
+			"Choix 1": "TRUE",
+			"Choix 2": "FALSE",
+			"Choix 3": "",
+			"Difficulté": "1",
+			"Intitulé": "Les performances d’un site Web peuvent avoir un impact sur son classement sur les moteurs de recherche.",
+			"Questions": "86",
+			"Réponse": "TRUE"
+		},
+		{
+			"Choix 1": "FALSE",
+			"Choix 2": "TRUE",
+			"Choix 3": "",
+			"Difficulté": "4",
+			"Intitulé": "Le SEM consiste à mettre en place de la publicité payante sur les moteurs de recherche.",
+			"Questions": "87",
+			"Réponse": "FALSE"
+		},
+		{
+			"Choix 1": "FALSE",
+			"Choix 2": "TRUE",
+			"Choix 3": "",
+			"Difficulté": "1",
+			"Intitulé": "Google Analytics est conforme au RGPD",
+			"Questions": "88",
+			"Réponse": "FALSE"
+		},
+		{
+			"Choix 1": "TRUE",
+			"Choix 2": "FALSE",
+			"Choix 3": "",
+			"Difficulté": "1",
+			"Intitulé": "Le SEO est une méthode de référencement payante",
+			"Questions": "89",
+			"Réponse": "FALSE"
+		},
+		{
+			"Choix 1": "TRUE",
+			"Choix 2": "FALSE",
+			"Choix 3": "",
+			"Difficulté": "1",
+			"Intitulé": "Le SEA est une méthode de référencement payante",
+			"Questions": "90",
+			"Réponse": "TRUE"
+		},
+		{
+			"Choix 1": "Un petit chemin de texte qui indique à l'utilisateur et aux robots où ils se trouvent en fonction du plan du site",
+			"Choix 2": "Une balise HTML qui relie tout le contenu d'une page pour l'empêcher de bouger",
+			"Choix 3": "",
+			"Difficulté": "6",
+			"Intitulé": "Qu'est-ce que le fil d'Ariane ?",
+			"Questions": "91",
+			"Réponse": "Un petit chemin de texte qui indique à l'utilisateur et aux robots où ils se trouvent en fonction du plan du site"
+		},
+		{
+			"Choix 1": "de blogs privés, ayant pour but de faire du lien",
+			"Choix 2": "d'influenceurs faisant de l'affiliation vers leurs produits",
+			"Choix 3": "de sites privés de n'importe quel type, ayant pour but de faire du lien",
+			"Difficulté": "6",
+			"Intitulé": "Un PBN est un réseau :",
+			"Questions": "92",
+			"Réponse": "de blogs privés, ayant pour but de faire du lien"
+		},
+		{
+			"Choix 1": "",
+			"Choix 2": "",
+			"Choix 3": "",
+			"Difficulté": "",
+			"Intitulé": "",
+			"Questions": "",
+			"Réponse": ""
+		},
+		{
+			"Choix 1": "",
+			"Choix 2": "",
+			"Choix 3": "",
+			"Difficulté": "",
+			"Intitulé": "",
+			"Questions": "",
+			"Réponse": ""
+		}
+	]

@@ -314,6 +314,18 @@ header {
   z-index: -1;
   overflow: hidden;
 }
+#gameboard{
+    height:100vh;
+    width:100%;  
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position: absolute;
+    z-index: -2;
+    overflow: hidden;
+}
 
 #nmbr{
   height: clamp(150px,55vh,600px);
@@ -411,13 +423,29 @@ header {
   }
 .joueur2 {
     color: #0f9d58;
+    animation: border 2s infinite;
 }
 .joueur3 {
     color: #d53e33;
+    animation: border 2s infinite;
 }
-.joueur4 {
+.joueur4_clicked {
     color: white;
     background-color: #f4b400;
+    animation: border 2s infinite;
+}
+.joueur2_clicked {
+    color: white;
+    background-color: #0f9d58;
+    animation: border 2s infinite;
+}
+.joueur3_clicked {
+    color: white;
+    background-color: #d53e33;
+    animation: border 2s infinite;
+}
+.joueur4 {
+    color: #f4b400;
     animation: border 2s infinite;
 }
 @keyframes border {

@@ -206,3 +206,41 @@ function displayQuestion(dif){
     document.getElementById("choice3").value = question.choices3
     document.getElementById("choice4").value = question.choices4
 }
+class Player{
+    win = false;
+    constructor(x,y,color,id){
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.id = id;
+    }
+}
+var Players = []
+var canvas = document.getElementById("canvas");
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+var ctx = canvas.getContext("2d");
+var svgImage = new Image();
+svgImage.src = "/templates/img/boardgame.png";
+svgImage.onload = function() {
+    ctx.drawImage(svgImage, 0, 0);
+    ctx.strokeStyle = "red";
+    ctx.fillRect(250, 250, 100, 100);
+    ctx.strokeRect(40, 250, 100, 100);
+    ctx.strokeRect(250, 40, 100, 100);
+    ctx.strokeRect(460, 250, 100, 100);
+    ctx.strokeRect(250, 460, 100, 100);
+    ctx.strokeRect(366.7-50, 424.5-50, 100, 100);
+    ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
+    ctx.strokeRect(133-50, 75.4-50, 100, 100);
+    ctx.strokeRect(424.5-50, 133-50, 100, 100);
+    for (let i=0;i<numbr_team;i++){
+        var player = new Player(250,250,"red",i)
+        Players.push(player)
+    }
+    for (let i=0;i<Players.length;i++){
+        ctx.fillStyle = Players[i].color;
+        ctx.fillRect(Players[i].x, Players[i].y, 100, 100);
+    }
+}

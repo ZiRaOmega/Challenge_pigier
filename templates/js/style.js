@@ -16,6 +16,84 @@ function transitionvideo() {
     },6000)
 }
 transitionvideo();
+//choix nombres équipae
+
+
+// nmbr équipe
+let numbr_team = 4
+let buttonnmr2 = document.querySelector("#j2");
+let buttonnmr3 = document.querySelector("#j3");
+let buttonnmr4 = document.querySelector("#j4")
+// eventlestner
+buttonnmr2.addEventListener('click',function transision1() {
+        if(numbr_team === 3){
+            document.querySelector("#j3").classList.add('joueur3');
+            document.querySelector("#j3").classList.remove('joueur3_clicked');
+            document.querySelector("#j2").classList.remove('joueur2');
+            document.querySelector("#j2").classList.add('joueur2_clicked');
+            numbr_team = 2;
+        }
+        if(numbr_team === 4){
+            document.querySelector("#j4").classList.add('joueur4');
+            document.querySelector("#j4").classList.remove('joueur4_clicked');
+            document.querySelector("#j2").classList.remove('joueur2');
+            document.querySelector("#j2").classList.add('joueur2_clicked');
+            numbr_team = 2;
+        }
+});
+
+buttonnmr3.addEventListener('click',function transision1() {
+    if(numbr_team === 2){
+        document.querySelector("#j2").classList.add('joueur2');
+        document.querySelector("#j2").classList.remove('joueur2_clicked');
+        document.querySelector("#j3").classList.remove('joueur3');
+        document.querySelector("#j3").classList.add('joueur3_clicked');
+        numbr_team = 3;
+    }
+    if(numbr_team === 4){
+        document.querySelector("#j4").classList.add('joueur4');
+        document.querySelector("#j4").classList.remove('joueur4_clicked');
+        document.querySelector("#j3").classList.remove('joueur3');
+        document.querySelector("#j3").classList.add('joueur3_clicked');
+        numbr_team = 3;
+    }
+});
+buttonnmr4.addEventListener('click',function transision1() {
+    if(numbr_team === 3){
+        document.querySelector("#j3").classList.add('joueur3');
+        document.querySelector("#j3").classList.remove('joueur3_clicked');
+        document.querySelector("#j4").classList.remove('joueur4');
+        document.querySelector("#j4").classList.add('joueur4_clicked');
+        numbr_team = 4;
+    }
+    if(numbr_team === 2){
+        document.querySelector("#j2").classList.add('joueur2');
+        document.querySelector("#j2").classList.remove('joueur2_clicked');
+        document.querySelector("#j4").classList.remove('joueur4');
+        document.querySelector("#j4").classList.add('joueur4_clicked');
+        numbr_team = 4;
+    }
+});
+
+// button commencer
+let buttonstart = document.getElementById("start");
+
+
+buttonstart.addEventListener('click',function transision2() {
+    document.getElementById("game_set").style.animation = "quit 1s linear";
+    setTimeout(()=> {document.getElementById("game_set").style.display = "none"},1000);
+    setTimeout(()=> {document.getElementById("gameboard").style.zIndex = '0'},1000);
+});
+
+
+function transitionvideo() {
+    setTimeout(()=> {
+        let video = document.getElementById("video");
+        video.style.display = "none";
+        console.log("yeep");
+    },6000)
+}
+
 
 //Récuperer afficher question
 

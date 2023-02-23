@@ -153,7 +153,7 @@ async function getAllQuestions(){
     )
 
 }
-
+getAllQuestions()
 function getQuestion(dif){
     if (dif == 1){
         var random = Math.floor(Math.random() * dif1.length);
@@ -197,16 +197,37 @@ function getQuestion(dif){
 }
 
 function displayQuestion(dif){
+    /**
+     * @type {Question}
+     */
     var question = getQuestion(dif)
-    document.getElementById("question").innerHTML = question.text
-    document.getElementById("choice1").innerHTML = question.choices1
-    document.getElementById("choice2").innerHTML = question.choices2
-    document.getElementById("choice3").innerHTML = question.choices3
-    document.getElementById("choice4").innerHTML = question.choices4
-    document.getElementById("choice1").value = question.choices1
-    document.getElementById("choice2").value = question.choices2
-    document.getElementById("choice3").value = question.choices3
-    document.getElementById("choice4").value = question.choices4
+    console.log(question)
+    document.getElementById("question").hidden = false
+    document.getElementById("question_text").innerText = question.text
+    document.getElementById("choix1").innerText = question.choices1
+    document.getElementById("choix2").innerText = question.choices2
+    document.getElementById("choix3").innerText = question.choices3
+    document.getElementById("choix4").innerText = question.choices4
+    if (question.choices1 == undefined){
+        document.getElementById("choix1").innerText = ""
+    }
+    if (question.choices2 == undefined){
+        document.getElementById("choix2").innerText = ""
+    }
+    if (question.choices3 == undefined){
+        document.getElementById("choix3").innerText = ""
+    }
+    if (question.choices4 == undefined){
+        document.getElementById("choix4").innerText = ""
+    }
+    document.getElementById("choix1").value = question.choices1
+    document.getElementById("choix2").value = question.choices2
+    document.getElementById("choix3").value = question.choices3
+    document.getElementById("choix4").value = question.choices4
+    document.getElementById("choix1").onclick = function(){if (question.isCorrectAnswer(question.choices1)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false} }
+    document.getElementById("choix2").onclick = function(){if (question.isCorrectAnswer(question.choices2)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
+    document.getElementById("choix3").onclick = function(){if (question.isCorrectAnswer(question.choices3)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
+    document.getElementById("choix4").onclick = function(){if (question.isCorrectAnswer(question.choices4)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
 }
 class Player{
     win = false;
@@ -220,10 +241,7 @@ class Player{
         this.height=height
         this.angle = angle
     }
-    moveOnCircle(centerX, centerY, radius, angle) {
-        this.x = centerX + Math.cos(angle) * radius - this.width / 2;
-        this.y = centerY + Math.sin(angle) * radius - this.height / 2;
-      }
+    
 }
 var Players = []
 const centerX = 250;
@@ -277,14 +295,149 @@ svgImage.onload = function() {
 
 
 }
+//position
+const widthimg = 556;
+const heightimg = widthimg*(500/556);
+const centre = {x:0,y:0};
+departrouge = 29;
+departvert = 13;
+departjaune = 21;
+departbleu = 5;
+arrivebleu = 0;
+arriverouge = 24;
+arrivejaune = 16;
+arrivevert = 8;
+// Definir les position par raport à la taille de l'image et 
+var positioncercle = [
+    {x : centre.x + (485 / 556 * widthimg), y : centre.y + (244 / 500 * heightimg)},
+    {x : centre.x + (482 / 556 * widthimg), y : centre.y + (286 / 500 * heightimg)},
+    {x : centre.x + (472 / 556 * widthimg), y : centre.y + (320 / 500 * heightimg)},
+    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
+    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (389 / 500 * heightimg)},
+    {x : centre.x + (394 / 556 * widthimg), y : centre.y + (415 / 500 * heightimg)},
+    {x : centre.x + (357 / 556 * widthimg), y : centre.y + (436 / 500 * heightimg)},
+    {x : centre.x + (320 / 556 * widthimg), y : centre.y + (448 / 500 * heightimg)},
+    {x : centre.x + (279 / 556 * widthimg), y : centre.y + (451 / 500 * heightimg)},
+    {x : centre.x + (237 / 556 * widthimg), y : centre.y + (446 / 500 * heightimg)},
+    {x : centre.x + (196 / 556 * widthimg), y : centre.y + (435 / 500 * heightimg)},
+    {x : centre.x + (160 / 556 * widthimg), y : centre.y + (414 / 500 * heightimg)},
+    {x : centre.x + (128 / 556 * widthimg), y : centre.y + (386 / 500 * heightimg)},
+    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
+    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (319 / 500 * heightimg)},
+    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
+    {x : centre.x + (69 / 556 * widthimg), y : centre.y + (242 / 500 * heightimg)},
+    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
+    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (163 / 500 * heightimg)},
+    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (130 / 500 * heightimg)},
+    {x : centre.x + (127 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
+    {x : centre.x + (159 / 556 * widthimg), y : centre.y + (71 / 500 * heightimg)},
+    {x : centre.x + (197 / 556 * widthimg), y : centre.y + (51 / 500 * heightimg)},
+    {x : centre.x + (235 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (32 / 500 * heightimg)},
+    {x : centre.x + (318 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
+    {x : centre.x + (355 / 556 * widthimg), y : centre.y + (48 / 500 * heightimg)},
+    {x : centre.x + (395 / 556 * widthimg), y : centre.y + (72 / 500 * heightimg)},
+    {x : centre.x + (428 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
+    {x : centre.x + (451 / 556 * widthimg), y : centre.y + (127 / 500 * heightimg)},
+    {x : centre.x + (470 / 556 * widthimg), y : centre.y + (161 / 500 * heightimg)},
+    {x : centre.x + (483 / 556 * widthimg), y : centre.y + (200 / 500 * heightimg)},
+];
+var positionarrbleu = [
+    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (399 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (372 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (346 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (319 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (296 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+];
+var positionarrjaune = [
+    {x : centre.x + (104 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (131 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (157 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (184 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (211 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (238 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (262 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+];
+var positionarrrouge = [
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (68 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (95 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (122 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (148 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (175 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (226 / 500 * heightimg)},
+];
+var positionarrvert = [
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (417 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (391 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (363 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (337 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (311 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (257 / 500 * heightimg)},
+];
 const MovePlayerCase = (id,nbrCase)=>{
     /**
      * @type {Player}
      */
     var player = Players.find(x => x.id == id);
     //What is the angle that need to be added to the current angle to move the player to the next base around a circle of 210 radius. Every base is at equal distance from each other.There is 32 bases in total.
-    player.angle+=0.195*(nbrCase);
-    console.log(player.angle,player.color)
-    player.moveOnCircle(centerX, centerY, radius, player.angle);
+    var curx = player.x;
+    var cury = player.y;
+    
+    
 
 }
+var difficulcontainer = document.getElementById("difficulte");
+var d1 = document.getElementById("d1");
+var d2 = document.getElementById("d2");
+var d3 = document.getElementById("d3");
+var d4 = document.getElementById("d4");
+var d5 = document.getElementById("d5");
+var d6 = document.getElementById("d6");
+var difficulte = 0;
+//Add event listener to the buttons to change the difficulty
+d1.addEventListener("click",()=>{
+    difficulte = 1
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte = 0
+}
+)
+d2.addEventListener("click",()=>{
+    difficulte = 2
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte=0
+}
+)
+d3.addEventListener("click",()=>{
+    difficulte = 3
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte=0
+}
+)
+d4.addEventListener("click",()=>{
+    difficulte = 4
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte=0
+}
+)
+d5.addEventListener("click",()=>{
+    difficulte = 5
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte=0
+}
+)
+d6.addEventListener("click",()=>{
+    difficulte = 6
+    difficulcontainer.hidden = true
+    displayQuestion(difficulte)
+    difficulte=0
+}
+)

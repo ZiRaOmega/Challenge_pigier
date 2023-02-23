@@ -472,3 +472,80 @@ header {
   flex-direction: row;
   justify-content: center;
 }
+
+.modal {
+  height: clamp(200px,70vw,70vh);
+  width: clamp(200px,70vw,800px);
+  background-color: rgba(255,255,255,0.9) ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+	z-index: 0;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 2rem;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: #0f9d58;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(#0f9d58, #0f9d58), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+  animation: rotate 4s linear infinite;
+}
+.modal::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 5px;
+}
+
+#difficulte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+#diff{
+  font-family: Alkalami;
+  font-size: clamp(30px,5vw,60px);
+  background: -webkit-linear-gradient(135deg, #4285f4, #0f9d58, #d53e33);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: AnimationName 7s ease infinite;
+  margin-top: clamp(2px,1vh,5px);
+  margin-bottom: clamp(2px,1vh,5px);
+}
+
+#choixdifficulte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+.choixdifficulte1 {
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw;
+  gap: 2vw;
+}
+

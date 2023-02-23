@@ -78,16 +78,15 @@ buttonnmr4.addEventListener('click',function transision1() {
 class Player{
     win = false;
     atend = false;
-    angle = 0;
     step = 0;
-    constructor(x,y,color,id,width,height,angle){
+    constructor(x,y,color,id,width,height,image){
         this.x = x;
-        this.y = y
+        this.y = y;
         this.color = color;
         this.id = id;
         this.width = width
         this.height=height
-        this.angle = angle
+        this.image = image
     }
     Update(x,y,step,atend){
         this.x = x
@@ -120,13 +119,31 @@ let angle = 0;
 var canvas = document.getElementById("canvas");
 var ctx = undefined;
 let svgImage = undefined;
+let Player1img = new Image();
+Player1img.src = "/templates/img/Piont 1.svg";
+let Player2img = new Image();
+Player2img.src = "/templates/img/Piont 2.svg";
+let Player3img = new Image();
+Player3img.src = "/templates/img/Piont 3.svg";
+let Player4img = new Image();
+Player4img.src = "/templates/img/Piont 4.svg";
+
 const PrintPlayers = ()=>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(svgImage, 0, 0);
     for (let i=0;i<Players.length;i++){
         console.log(Players[i].x, Players[i].y)
         ctx.fillStyle = Players[i].color;
-        ctx.fillRect(Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        //ctx.fillRect(Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        if (Players[i].id==1){
+        ctx.drawImage(Player1img, Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        }else if (Players[i].id==2){
+            ctx.drawImage(Player2img, Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        }else if (Players[i].id==3){
+            ctx.drawImage(Player3img, Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        }else if (Players[i].id==4){
+            ctx.drawImage(Player4img, Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+        }
     }
 }
 var positioncercle = [
@@ -209,7 +226,6 @@ svgImage = new Image();
 svgImage.src = "/templates/img/boardgame.png";
 
 
-
 // Definir les position par raport à la taille de l'image et 
 
 const InitPLayer = ()=>{
@@ -217,21 +233,21 @@ const InitPLayer = ()=>{
     var y = positioncercle[departbleu].y;
     if (NbrPlayer>=2){
         
-        Players.push(new Player(x,y, "blue", 1,35,35,0.975));
+        Players.push(new Player(x,y, "blue", 1,50,50,0.975));
     //ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
         x = positioncercle[departvert].x;
         y = positioncercle[departvert].y;
-        Players.push(new Player(x,y, "green", 2,35,35,2.535));
+        Players.push(new Player(x,y, "green", 2,50,50,2.535));
     }
     if (NbrPlayer>=3){
         x = positioncercle[departjaune].x;
         y = positioncercle[departjaune].y;
-        Players.push(new Player(x,y, "yellow", 3,35,35,4.095));
+        Players.push(new Player(x,y, "yellow", 3,50,50,4.095));
     }
     if (NbrPlayer==4){
         x = positioncercle[departrouge].x;
         y = positioncercle[departrouge].y;
-        Players.push(new Player(x,y, "red", 4,35,35,5.655));
+        Players.push(new Player(x,y, "red", 4,50,50,5.655));
     }
     PrintPlayers();
 }
@@ -321,11 +337,52 @@ const MovePlayerCase = (id,nbrCase)=>{
         player.x = nextpos.x;
         player.y = nextpos.y;
     }
-
+    
     player.Update(player.x,player.y,nbrCase,player.atend);
     CurrentPlayer = player.id+1;
     if (CurrentPlayer>NbrPlayer){
         CurrentPlayer = 1;
+    }
+    for (let i = 0; i < Players.length; i++) {
+        if (Players[i].id != player.id && Players[i].x === player.x && Players[i].y === player.y){
+            if (Players[i].color === "blue"){
+                console.log(player.color,Players[i].color)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+                Players[i].x = positioncercle[departbleu].x;
+                Players[i].y = positioncercle[departbleu].y;
+                Players[i].step = 0;
+                Players[i].atend = false;
+                Players[i].Update( positioncercle[departjaune].x,Players[i].y = positioncercle[departjaune].y,-1,false)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+            }else if (Players[i].color === "green"){
+                console.log(player.color,Players[i].color)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+                Players[i].x = positioncercle[departvert].x;
+                Players[i].y = positioncercle[departvert].y;
+                Players[i].step = 0;
+                Players[i].atend = false;
+                Players[i].Update( positioncercle[departjaune].x,Players[i].y = positioncercle[departjaune].y,-1,false)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+            }else if (Players[i].color === "yellow"){
+                console.log(player.color,Players[i].color)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+                Players[i].x = positioncercle[departjaune].x;
+                Players[i].y = positioncercle[departjaune].y;
+                Players[i].step = 0;
+                Players[i].atend = false;
+                Players[i].Update( positioncercle[departjaune].x,Players[i].y = positioncercle[departjaune].y,-1,false)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+            }else if (Players[i].color === "red"){
+                console.log(player.color,Players[i].color)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+                Players[i].x = positioncercle[departrouge].x;
+                Players[i].y = positioncercle[departrouge].y;
+                Players[i].step = 0;
+                Players[i].atend = false;
+                Players[i].Update( positioncercle[departjaune].x,Players[i].y = positioncercle[departjaune].y,-1,false)
+                console.log(Players[i].x,Players[i].y,player.x,player.y)
+            }
+        }
     }
     PrintPlayers();
     

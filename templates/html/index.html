@@ -46,7 +46,24 @@
         </div>
     </div>
     <div id="gameboard">
-        <button id="move" onclick="MovePlayerCase(1,1);PrintPlayers()">Move</button>
+        <div id="difficulte">
+            <h1 id="diff">Difficulté</h1>
+            <div id="choixdifficulte">
+                <img src = "./templates/img/carte 1.svg" id="d1" class="difficulte difficulte1_clicked" alt="difficulte1"></img>
+                <img src = "./templates/img/carte 2.svg" id="d2" class="difficulte difficulte2" alt="difficulte2"></img>
+                <img src = "./templates/img/carte 3.svg" id="d3" class="difficulte difficulte3" alt="difficulte3"></img>
+                <img src = "./templates/img/carte 4.svg" id="d4" class="difficulte difficulte4" alt="difficulte4"></img>
+                <img src = "./templates/img/carte 5.svg" id="d5" class="difficulte difficulte5" alt="difficulte5"></img>
+                <img src = "./templates/img/carte 6.svg" id="d6" class="difficulte difficulte6" alt="difficulte6"></img>
+            </div>
+        </div>
+        <div id="question" hidden>
+            <h1 id="question_text"></h1>
+            <div id="choix1" class="choix"></div>
+            <div id="choix2" class="choix"></div>
+            <div id="choix3" class="choix"></div>
+            <div id="choix4" class="choix"></div>
+        </div>
         <image id="board" src="./templates/img/plateau (1).svg" alt="board" height="500px" hidden>
         <canvas id="canvas" width="500" height="500"></canvas>
     </div>

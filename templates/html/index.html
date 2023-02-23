@@ -29,10 +29,10 @@
         <div id="goo">
             <p class="boutton_text">PLAY</p>
         </div>  
-        <video id="video" controls autoplay muted>
+        <!-- <video id="video" controls autoplay muted>
             <source src="./templates/img/Render.mp4" type="video/mp4">
             Your browser does not support the video tag.
-        </video> 
+        </video>  -->
     </div>
     <div id="game_set">
         <div id="nmbr">
@@ -46,15 +46,20 @@
         </div>
     </div>
     <div id="gameboard">
+        <div class="modal">
         <div id="difficulte">
             <h1 id="diff">Difficulté</h1>
             <div id="choixdifficulte">
+                <div class="choixdifficulte1">
                 <img src = "./templates/img/carte 1.svg" id="d1" class="difficulte difficulte1_clicked" alt="difficulte1"></img>
                 <img src = "./templates/img/carte 2.svg" id="d2" class="difficulte difficulte2" alt="difficulte2"></img>
                 <img src = "./templates/img/carte 3.svg" id="d3" class="difficulte difficulte3" alt="difficulte3"></img>
+                </div>
+                <div class="choixdifficulte1">
                 <img src = "./templates/img/carte 4.svg" id="d4" class="difficulte difficulte4" alt="difficulte4"></img>
                 <img src = "./templates/img/carte 5.svg" id="d5" class="difficulte difficulte5" alt="difficulte5"></img>
                 <img src = "./templates/img/carte 6.svg" id="d6" class="difficulte difficulte6" alt="difficulte6"></img>
+                </div>
             </div>
         </div>
         <div id="question" hidden>
@@ -64,7 +69,7 @@
             <div id="choix3" class="choix"></div>
             <div id="choix4" class="choix"></div>
         </div>
-        <image id="board" src="./templates/img/plateau (1).svg" alt="board" height="500px" hidden>
+        </div>
         <canvas id="canvas" width="500" height="500"></canvas>
     </div>
     <script src='./templates/js/style.js'></script>

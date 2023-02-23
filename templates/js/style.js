@@ -210,51 +210,81 @@ function displayQuestion(dif){
 }
 class Player{
     win = false;
-    constructor(x,y,color,id,width,height){
+    angle = 0;
+    constructor(x,y,color,id,width,height,angle){
         this.x = x-width/2;
         this.y = y-height/2;
         this.color = color;
         this.id = id;
         this.width = width
         this.height=height
+        this.angle = angle
     }
+    moveOnCircle(centerX, centerY, radius, angle) {
+        this.x = centerX + Math.cos(angle) * radius - this.width / 2;
+        this.y = centerY + Math.sin(angle) * radius - this.height / 2;
+      }
 }
 var Players = []
+const centerX = 250;
+const centerY = 250;
 
-const StartGame= ()=>{
-    var canvas = document.getElementById("canvas");
-/**
- * @type {CanvasRenderingContext2D}
- */
-var ctx = canvas.getContext("2d");
-var svgImage = new Image();
-svgImage.src = "/templates/img/boardgame.png";
+// Set the radius of the circle
+const radius = 210;
+
+// Set the starting angle
+let angle = 0;
+var canvas = document.getElementById("canvas");
+var ctx = undefined;
+let svgImage = undefined;
 const PrintPlayers = ()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(svgImage, 0, 0);
     for (let i=0;i<Players.length;i++){
         ctx.fillStyle = Players[i].color;
         ctx.fillRect(Players[i].x, Players[i].y, Players[i].width,Players[i].height);
     }
 }
+const StartGame= ()=>{
+    
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+ctx = canvas.getContext("2d");
+svgImage = new Image();
+svgImage.src = "/templates/img/boardgame.png";
+
 const InitPLayer = ()=>{
     if (NbrPlayer>=2){
-        Players.push(new Player(366.7, 424.5, "red", 1,35,35));
+        Players.push(new Player(366.7, 424.5, "blue", 1,35,35,0.975));
     //ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
-        Players.push(new Player(75.4, 366.7, "blue", 2,35,35));
+        Players.push(new Player(75.4, 366.7, "green", 2,35,35,2.535));
     }
     if (NbrPlayer>=3){
 
-        Players.push(new Player(133, 75.4, "green", 3,35,35));
+        Players.push(new Player(133, 75.4, "yellow", 3,35,35,4.095));
     }
     if (NbrPlayer==4){
 
-        Players.push(new Player(424.5, 133, "yellow", 4,35,35));
+        Players.push(new Player(424.5, 133, "red", 4,35,35,5.655));
     }
     PrintPlayers();
 }
 svgImage.onload = function() {
    InitPLayer();
+  
 }
 
+
+}
+const MovePlayerCase = (id,nbrCase)=>{
+    /**
+     * @type {Player}
+     */
+    var player = Players.find(x => x.id == id);
+    //What is the angle that need to be added to the current angle to move the player to the next base around a circle of 210 radius. Every base is at equal distance from each other.There is 32 bases in total.
+    player.angle+=0.195*(nbrCase);
+    console.log(player.angle,player.color)
+    player.moveOnCircle(centerX, centerY, radius, player.angle);
 
 }

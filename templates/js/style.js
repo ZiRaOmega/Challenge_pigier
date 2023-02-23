@@ -145,7 +145,7 @@ const PrintPlayers = ()=>{
             ctx.drawImage(Player4img, Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
         }
     }
-}
+}//
 var positioncercle = [
     {x : centre.x + (485 / 556 * widthimg), y : centre.y + (244 / 500 * heightimg)},
     {x : centre.x + (482 / 556 * widthimg), y : centre.y + (286 / 500 * heightimg)},

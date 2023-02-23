@@ -74,7 +74,257 @@ buttonnmr4.addEventListener('click',function transision1() {
         numbr_team = 4;
     }
 });
+class Player{
+    win = false;
+    atend = false;
+    angle = 0;
+    step = 0;
+    constructor(x,y,color,id,width,height,angle){
+        this.x = x;
+        this.y = y
+        this.color = color;
+        this.id = id;
+        this.width = width
+        this.height=height
+        this.angle = angle
+    }
+    Update(x,y,step,atend){
+        this.x = x
+        this.y = y;
+this.step += step;
+this.atend = atend;
+    }
+    
+}
+var Players = []
+const centerX = 250;
+const centerY = 250;
+//position
+const widthimg = 556;
+const heightimg = widthimg*(500/556);
+const centre = {x:0,y:0};
+let departrouge = 29;
+let departvert = 13;
+let departjaune = 21;
+let departbleu = 5;
+arrivebleu = 0;
+arriverouge = 24;
+arrivejaune = 16;
+arrivevert = 8;
+// Set the radius of the circle
+const radius = 210;
 
+// Set the starting angle
+let angle = 0;
+var canvas = document.getElementById("canvas");
+var ctx = undefined;
+let svgImage = undefined;
+const PrintPlayers = ()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(svgImage, 0, 0);
+    for (let i=0;i<Players.length;i++){
+        console.log(Players[i].x, Players[i].y)
+        ctx.fillStyle = Players[i].color;
+        ctx.fillRect(Players[i].x-Players[i].width/2, Players[i].y-Players[i].height/2, Players[i].width,Players[i].height);
+    }
+}
+var positioncercle = [
+    {x : centre.x + (485 / 556 * widthimg), y : centre.y + (244 / 500 * heightimg)},
+    {x : centre.x + (482 / 556 * widthimg), y : centre.y + (286 / 500 * heightimg)},
+    {x : centre.x + (472 / 556 * widthimg), y : centre.y + (320 / 500 * heightimg)},
+    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
+    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (389 / 500 * heightimg)},
+    {x : centre.x + (394 / 556 * widthimg), y : centre.y + (415 / 500 * heightimg)},
+    {x : centre.x + (357 / 556 * widthimg), y : centre.y + (436 / 500 * heightimg)},
+    {x : centre.x + (320 / 556 * widthimg), y : centre.y + (448 / 500 * heightimg)},
+    {x : centre.x + (279 / 556 * widthimg), y : centre.y + (451 / 500 * heightimg)},
+    {x : centre.x + (237 / 556 * widthimg), y : centre.y + (446 / 500 * heightimg)},
+    {x : centre.x + (196 / 556 * widthimg), y : centre.y + (435 / 500 * heightimg)},
+    {x : centre.x + (160 / 556 * widthimg), y : centre.y + (414 / 500 * heightimg)},
+    {x : centre.x + (128 / 556 * widthimg), y : centre.y + (386 / 500 * heightimg)},
+    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
+    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (319 / 500 * heightimg)},
+    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
+    {x : centre.x + (69 / 556 * widthimg), y : centre.y + (242 / 500 * heightimg)},
+    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
+    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (163 / 500 * heightimg)},
+    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (130 / 500 * heightimg)},
+    {x : centre.x + (127 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
+    {x : centre.x + (159 / 556 * widthimg), y : centre.y + (71 / 500 * heightimg)},
+    {x : centre.x + (197 / 556 * widthimg), y : centre.y + (51 / 500 * heightimg)},
+    {x : centre.x + (235 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (32 / 500 * heightimg)},
+    {x : centre.x + (318 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
+    {x : centre.x + (355 / 556 * widthimg), y : centre.y + (48 / 500 * heightimg)},
+    {x : centre.x + (395 / 556 * widthimg), y : centre.y + (72 / 500 * heightimg)},
+    {x : centre.x + (428 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
+    {x : centre.x + (451 / 556 * widthimg), y : centre.y + (127 / 500 * heightimg)},
+    {x : centre.x + (470 / 556 * widthimg), y : centre.y + (161 / 500 * heightimg)},
+    {x : centre.x + (483 / 556 * widthimg), y : centre.y + (200 / 500 * heightimg)},
+];
+var positionarrbleu = [
+    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (399 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (372 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (346 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (319 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (296 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+];
+var positionarrjaune = [
+    {x : centre.x + (104 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (131 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (157 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (184 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (211 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (238 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+    {x : centre.x + (262 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
+];
+var positionarrrouge = [
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (68 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (95 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (122 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (148 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (175 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (226 / 500 * heightimg)},
+];
+var positionarrvert = [
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (417 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (391 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (363 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (337 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (311 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
+    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (257 / 500 * heightimg)},
+];
+const StartGame= ()=>{
+    
+/**
+ * @type {CanvasRenderingContext2D}
+ */
+ctx = canvas.getContext("2d");
+svgImage = new Image();
+svgImage.src = "/templates/img/boardgame.png";
+
+
+
+// Definir les position par raport à la taille de l'image et 
+
+const InitPLayer = ()=>{
+    var x = positioncercle[departbleu].x;
+    var y = positioncercle[departbleu].y;
+    if (NbrPlayer>=2){
+        
+        Players.push(new Player(x,y, "blue", 1,35,35,0.975));
+    //ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
+        x = positioncercle[departvert].x;
+        y = positioncercle[departvert].y;
+        Players.push(new Player(x,y, "green", 2,35,35,2.535));
+    }
+    if (NbrPlayer>=3){
+        x = positioncercle[departjaune].x;
+        y = positioncercle[departjaune].y;
+        Players.push(new Player(x,y, "yellow", 3,35,35,4.095));
+    }
+    if (NbrPlayer==4){
+        x = positioncercle[departrouge].x;
+        y = positioncercle[departrouge].y;
+        Players.push(new Player(x,y, "red", 4,35,35,5.655));
+    }
+    PrintPlayers();
+}
+svgImage.onload = function() {
+   InitPLayer();
+  
+}
+
+
+}
+const MovePlayerCase = (id,nbrCase)=>{
+    /**
+     * @type {Player}
+     */
+    var player = Players.find(x => x.id == id);
+    //What is the angle that need to be added to the current angle to move the player to the next base around a circle of 210 radius. Every base is at equal distance from each other.There is 32 bases in total.
+    var curx = player.x;
+    var cury = player.y;
+    for (let i = 0; i < positioncercle.length; i++) {
+        console.log(positioncercle[i].x,positioncercle[i].y,curx,cury)
+        if (positioncercle[i].x == curx && positioncercle[i].y == cury) {
+            if (i + nbrCase > positioncercle.length) {
+                var nextpos = positioncercle[(i + nbrCase) - positioncercle.length];
+            } else{
+
+                var nextpos = positioncercle[(i + nbrCase)];
+            }
+            if (player.step+nbrCase>=27){
+                if (player.atend == false){
+                    console.log(player.atend)
+                    nbrCase = player.step+nbrCase-27;
+                    if (player.color == "blue"){
+                        nextpos = positionarrbleu[0]
+                    }else if (player.color == "green"){
+                        nextpos = positionarrvert[0]
+                    }else if (player.color == "yellow"){
+                        nextpos = positionarrjaune[0]
+                    }else if (player.color == "red"){
+                        nextpos = positionarrrouge[0]
+                    }
+                    player.atend = true;
+                }
+            }
+            console.log(nextpos)
+            player.x = nextpos.x;
+            player.y = nextpos.y;
+            break;
+        }
+    }
+    if (player.atend == true){
+        if (player.color == "blue"){
+            if (player.step+nbrCase>=27){
+                if (player.step+nbrCase-27<positionarrbleu.length){
+                    nextpos = positionarrbleu[player.step+nbrCase-27]
+                }else{
+                    nbrCase=0
+                }
+            }
+        }else if (player.color == "green"){
+            if (player.step+nbrCase>=27){
+                if (player.step+nbrCase-27<positionarrvert.length){
+                    nextpos = positionarrvert[player.step+nbrCase-27]
+                }else{
+                    nbrCase=0
+                }
+            }
+        }else if (player.color == "yellow"){
+            if (player.step+nbrCase>=27){
+                if (player.step+nbrCase-27<positionarrjaune.length){
+                    nextpos = positionarrjaune[player.step+nbrCase-27]
+                }else{
+                    nbrCase=0
+                }
+            }
+        }else if (player.color == "red"){
+            if (player.step+nbrCase>=27){
+                if (player.step+nbrCase-27<positionarrrouge.length){
+                    nextpos = positionarrrouge[player.step+nbrCase-27]
+                }else{
+                    nbrCase=0
+                }
+            }
+        }
+        if (player.step+nbrCase-27==positionarrbleu.length-1){
+            player.win = true;
+        }
+        player.x = nextpos.x;
+        player.y = nextpos.y;
+    }
+
+    player.Update(player.x,player.y,nbrCase,player.atend);
+    
+
+}
 // button commencer
 let buttonstart = document.getElementById("start");
 
@@ -229,167 +479,7 @@ function displayQuestion(dif){
     document.getElementById("choix3").onclick = function(){if (question.isCorrectAnswer(question.choices3)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
     document.getElementById("choix4").onclick = function(){if (question.isCorrectAnswer(question.choices4)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
 }
-class Player{
-    win = false;
-    angle = 0;
-    constructor(x,y,color,id,width,height,angle){
-        this.x = x-width/2;
-        this.y = y-height/2;
-        this.color = color;
-        this.id = id;
-        this.width = width
-        this.height=height
-        this.angle = angle
-    }
-    
-}
-var Players = []
-const centerX = 250;
-const centerY = 250;
 
-// Set the radius of the circle
-const radius = 210;
-
-// Set the starting angle
-let angle = 0;
-var canvas = document.getElementById("canvas");
-var ctx = undefined;
-let svgImage = undefined;
-const PrintPlayers = ()=>{
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(svgImage, 0, 0);
-    for (let i=0;i<Players.length;i++){
-        ctx.fillStyle = Players[i].color;
-        ctx.fillRect(Players[i].x, Players[i].y, Players[i].width,Players[i].height);
-    }
-}
-const StartGame= ()=>{
-    
-/**
- * @type {CanvasRenderingContext2D}
- */
-ctx = canvas.getContext("2d");
-svgImage = new Image();
-svgImage.src = "/templates/img/boardgame.png";
-
-const InitPLayer = ()=>{
-    if (NbrPlayer>=2){
-        Players.push(new Player(366.7, 424.5, "blue", 1,35,35,0.975));
-    //ctx.strokeRect(82.3-50, 366.7-50, 100, 100);
-        Players.push(new Player(75.4, 366.7, "green", 2,35,35,2.535));
-    }
-    if (NbrPlayer>=3){
-
-        Players.push(new Player(133, 75.4, "yellow", 3,35,35,4.095));
-    }
-    if (NbrPlayer==4){
-
-        Players.push(new Player(424.5, 133, "red", 4,35,35,5.655));
-    }
-    PrintPlayers();
-}
-svgImage.onload = function() {
-   InitPLayer();
-  
-}
-
-
-}
-//position
-const widthimg = 556;
-const heightimg = widthimg*(500/556);
-const centre = {x:0,y:0};
-departrouge = 29;
-departvert = 13;
-departjaune = 21;
-departbleu = 5;
-arrivebleu = 0;
-arriverouge = 24;
-arrivejaune = 16;
-arrivevert = 8;
-// Definir les position par raport à la taille de l'image et 
-var positioncercle = [
-    {x : centre.x + (485 / 556 * widthimg), y : centre.y + (244 / 500 * heightimg)},
-    {x : centre.x + (482 / 556 * widthimg), y : centre.y + (286 / 500 * heightimg)},
-    {x : centre.x + (472 / 556 * widthimg), y : centre.y + (320 / 500 * heightimg)},
-    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
-    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (389 / 500 * heightimg)},
-    {x : centre.x + (394 / 556 * widthimg), y : centre.y + (415 / 500 * heightimg)},
-    {x : centre.x + (357 / 556 * widthimg), y : centre.y + (436 / 500 * heightimg)},
-    {x : centre.x + (320 / 556 * widthimg), y : centre.y + (448 / 500 * heightimg)},
-    {x : centre.x + (279 / 556 * widthimg), y : centre.y + (451 / 500 * heightimg)},
-    {x : centre.x + (237 / 556 * widthimg), y : centre.y + (446 / 500 * heightimg)},
-    {x : centre.x + (196 / 556 * widthimg), y : centre.y + (435 / 500 * heightimg)},
-    {x : centre.x + (160 / 556 * widthimg), y : centre.y + (414 / 500 * heightimg)},
-    {x : centre.x + (128 / 556 * widthimg), y : centre.y + (386 / 500 * heightimg)},
-    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (355 / 500 * heightimg)},
-    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (319 / 500 * heightimg)},
-    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
-    {x : centre.x + (69 / 556 * widthimg), y : centre.y + (242 / 500 * heightimg)},
-    {x : centre.x + (73 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
-    {x : centre.x + (84 / 556 * widthimg), y : centre.y + (163 / 500 * heightimg)},
-    {x : centre.x + (102 / 556 * widthimg), y : centre.y + (130 / 500 * heightimg)},
-    {x : centre.x + (127 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
-    {x : centre.x + (159 / 556 * widthimg), y : centre.y + (71 / 500 * heightimg)},
-    {x : centre.x + (197 / 556 * widthimg), y : centre.y + (51 / 500 * heightimg)},
-    {x : centre.x + (235 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (32 / 500 * heightimg)},
-    {x : centre.x + (318 / 556 * widthimg), y : centre.y + (37 / 500 * heightimg)},
-    {x : centre.x + (355 / 556 * widthimg), y : centre.y + (48 / 500 * heightimg)},
-    {x : centre.x + (395 / 556 * widthimg), y : centre.y + (72 / 500 * heightimg)},
-    {x : centre.x + (428 / 556 * widthimg), y : centre.y + (97 / 500 * heightimg)},
-    {x : centre.x + (451 / 556 * widthimg), y : centre.y + (127 / 500 * heightimg)},
-    {x : centre.x + (470 / 556 * widthimg), y : centre.y + (161 / 500 * heightimg)},
-    {x : centre.x + (483 / 556 * widthimg), y : centre.y + (200 / 500 * heightimg)},
-];
-var positionarrbleu = [
-    {x : centre.x + (453 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (427 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (399 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (372 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (346 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (319 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (296 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-];
-var positionarrjaune = [
-    {x : centre.x + (104 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (131 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (157 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (184 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (211 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (238 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-    {x : centre.x + (262 / 556 * widthimg), y : centre.y + (243 / 500 * heightimg)},
-];
-var positionarrrouge = [
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (68 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (95 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (122 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (148 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (175 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (201 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (226 / 500 * heightimg)},
-];
-var positionarrvert = [
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (417 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (391 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (363 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (337 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (311 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (284 / 500 * heightimg)},
-    {x : centre.x + (278 / 556 * widthimg), y : centre.y + (257 / 500 * heightimg)},
-];
-const MovePlayerCase = (id,nbrCase)=>{
-    /**
-     * @type {Player}
-     */
-    var player = Players.find(x => x.id == id);
-    //What is the angle that need to be added to the current angle to move the player to the next base around a circle of 210 radius. Every base is at equal distance from each other.There is 32 bases in total.
-    var curx = player.x;
-    var cury = player.y;
-    
-    
-
-}
 var difficulcontainer = document.getElementById("difficulte");
 var d1 = document.getElementById("d1");
 var d2 = document.getElementById("d2");

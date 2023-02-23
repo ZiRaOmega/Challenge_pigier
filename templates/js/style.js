@@ -1,3 +1,4 @@
+let CurrentPlayer = 1
 let button1 = document.getElementById("goo");
 
 
@@ -252,7 +253,7 @@ const MovePlayerCase = (id,nbrCase)=>{
     for (let i = 0; i < positioncercle.length; i++) {
         console.log(positioncercle[i].x,positioncercle[i].y,curx,cury)
         if (positioncercle[i].x == curx && positioncercle[i].y == cury) {
-            if (i + nbrCase > positioncercle.length) {
+            if (i + nbrCase > positioncercle.length-1) {
                 var nextpos = positioncercle[(i + nbrCase) - positioncercle.length];
             } else{
 
@@ -322,6 +323,11 @@ const MovePlayerCase = (id,nbrCase)=>{
     }
 
     player.Update(player.x,player.y,nbrCase,player.atend);
+    CurrentPlayer = player.id+1;
+    if (CurrentPlayer>NbrPlayer){
+        CurrentPlayer = 1;
+    }
+    PrintPlayers();
     
 
 }
@@ -445,7 +451,24 @@ function getQuestion(dif){
         return getQuestion()
     }
 }
-
+const GoodAnswer = (question,dif,choice) => {
+    if (question.isCorrectAnswer(choice)){
+        document.getElementById("question").hidden = true;
+        document.getElementById("modal").style.display = "none"
+        setTimeout(()=>{document.getElementById("modal").style.display = "flex";document.getElementById("difficulte").style.display="flex";document.getElementById("diff").innerText="Player "+CurrentPlayer},5000)
+        //document.getElementById("difficulte").style.display="flex"
+        MovePlayerCase(CurrentPlayer,dif)
+    }else{
+        document.getElementById("question").hidden = true;
+        document.getElementById("difficulte").style.display="flex"
+        CurrentPlayer = CurrentPlayer+1
+        if (CurrentPlayer>NbrPlayer){
+            CurrentPlayer = 1;
+        }
+        document.getElementById("diff").innerText="Player "+CurrentPlayer
+    }
+    
+}
 function displayQuestion(dif){
     /**
      * @type {Question}
@@ -474,10 +497,10 @@ function displayQuestion(dif){
     document.getElementById("choix2").value = question.choices2
     document.getElementById("choix3").value = question.choices3
     document.getElementById("choix4").value = question.choices4
-    document.getElementById("choix1").onclick = function(){if (question.isCorrectAnswer(question.choices1)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false} }
-    document.getElementById("choix2").onclick = function(){if (question.isCorrectAnswer(question.choices2)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
-    document.getElementById("choix3").onclick = function(){if (question.isCorrectAnswer(question.choices3)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
-    document.getElementById("choix4").onclick = function(){if (question.isCorrectAnswer(question.choices4)){document.getElementById("question").hidden = true;document.getElementById("difficulte").hidden=false}}
+    document.getElementById("choix1").onclick =function(){GoodAnswer(question,dif,question.choices1)}
+    document.getElementById("choix2").onclick =function(){GoodAnswer(question,dif,question.choices2)}
+    document.getElementById("choix3").onclick =function(){GoodAnswer(question,dif,question.choices3)}
+    document.getElementById("choix4").onclick =function(){GoodAnswer(question,dif,question.choices4)}
 }
 
 var difficulcontainer = document.getElementById("difficulte");
@@ -491,42 +514,42 @@ var difficulte = 0;
 //Add event listener to the buttons to change the difficulty
 d1.addEventListener("click",()=>{
     difficulte = 1
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte = 0
 }
 )
 d2.addEventListener("click",()=>{
     difficulte = 2
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte=0
 }
 )
 d3.addEventListener("click",()=>{
     difficulte = 3
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte=0
 }
 )
 d4.addEventListener("click",()=>{
     difficulte = 4
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte=0
 }
 )
 d5.addEventListener("click",()=>{
     difficulte = 5
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte=0
 }
 )
 d6.addEventListener("click",()=>{
     difficulte = 6
-    difficulcontainer.hidden = true
+    difficulcontainer.style.display = "none"
     displayQuestion(difficulte)
     difficulte=0
 }

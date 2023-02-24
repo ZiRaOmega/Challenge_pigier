@@ -272,7 +272,6 @@ const MovePlayerCase = (id,nbrCase)=>{
             if (i + nbrCase > positioncercle.length-1) {
                 var nextpos = positioncercle[(i + nbrCase) - positioncercle.length];
             } else{
-
                 var nextpos = positioncercle[(i + nbrCase)];
             }
             if (player.step+nbrCase>=27){
@@ -385,14 +384,25 @@ const MovePlayerCase = (id,nbrCase)=>{
         }
     }
     if (player.win == true){
+        setTimeout(()=> {
+        let color = ["#4285f4","#0f9d58","#d53e33","#fbb300"]
+        let i =0;
         var div = document.createElement("div");
         div.className = "win modal";
         div.innerHTML = "Le joueur "+player.id+" a gagné";
-        div.style.fontSize = "50px";
+        setInterval(()=> {
+            div.style.color = color[i];
+            if (i===3){
+                i=0;
+            }else{
+                i++
+            }
+        },100)
         document.getElementById("gameboard").appendChild(div);
         setTimeout(()=> {
-            window.location.reload
-        },5000)
+            window.location.reload()
+        },7500)
+    },2500)
     }
 
     PrintPlayers();
@@ -405,7 +415,22 @@ let buttonstart = document.getElementById("start");
 var NbrPlayer=0
 buttonstart.addEventListener('click',function transision2() {
     document.getElementById("game_set").style.animation = "quit 1s linear";
-    setTimeout(()=> {document.getElementById("game_set").style.display = "none"},1000);
+    document.getElementById("modal").style.display = "none"
+    setTimeout(()=> {document.getElementById("game_set").style.display = "none" 
+    document.getElementById("counter").style.display = "flex";
+    document.getElementById("counter").innerHTML = "3"
+    document.getElementById("counter").style.color = "#0f9d58";
+    setTimeout(()=> {document.getElementById("counter").innerHTML = "2"
+        document.getElementById("counter").style.color = "#fbb300";
+    },1000);
+    setTimeout(()=> {document.getElementById("counter").innerHTML = "1"
+        document.getElementById("counter").style.color = "#d53e33";
+    },2000);
+},1000);
+
+    setTimeout(()=> {document.getElementById("modal").style.display = "flex"
+    document.getElementById("counter").style.display = "none";
+    },4000);
     setTimeout(()=> {document.getElementById("gameboard").style.zIndex = '0'},1000);
     NbrPlayer = numbr_team
     StartGame()
@@ -532,17 +557,27 @@ const GetColor = (player) => {
 const GoodAnswer = (question,dif,choice) => {
     if (question.isCorrectAnswer(choice)){
         document.getElementById("question").style.display = "none";
-        document.getElementById("modal").style.display = "none"
+        document.getElementById("vrai").style.display = "flex";
+        document.getElementById("vrai").innerHTML = `<img src="./templates/img/vrai.gif" alt="Bonne réponse">`
+        setTimeout(()=>{
+            document.getElementById("modal").style.display = "none"
+            document.getElementById("vrai").style.display = "none";
+        },2500)
         setTimeout(()=>{
             document.getElementById("modal").style.display = "flex";
             document.getElementById("difficulte").style.display="flex";
             document.getElementById("diff").innerText="Joueur "+GetColor(CurrentPlayer)
-        },5000)
+        },9000)
         //document.getElementById("difficulte").style.display="flex"
         MovePlayerCase(CurrentPlayer,dif)
     }else{
         document.getElementById("question").style.display = "none";
-        document.getElementById("difficulte").style.display="flex"
+        document.getElementById("faux").style.display = "flex";
+        document.getElementById("faux").innerHTML = `<img src="./templates/img/faux.gif" alt="Mauvaise réponse">`
+        setTimeout(()=>{
+            document.getElementById("difficulte").style.display="flex"
+            document.getElementById("faux").style.display = "none";
+        },2500)
         CurrentPlayer = CurrentPlayer+1
         if (CurrentPlayer>NbrPlayer){
             CurrentPlayer = 1;

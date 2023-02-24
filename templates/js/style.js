@@ -1,5 +1,5 @@
 let CurrentPlayer = 1
-let button1 = document.getElementById("goo");
+let button1 = document.getElementById("main");
 
 
 button1.addEventListener('click',function transision1() {
@@ -100,7 +100,7 @@ var Players = []
 const centerX = 250;
 const centerY = 250;
 //position
-const widthimg = 556;
+const widthimg = 800;
 const heightimg = widthimg*(500/556);
 const centre = {x:0,y:0};
 let departrouge = 29;
@@ -120,17 +120,17 @@ var canvas = document.getElementById("canvas");
 var ctx = undefined;
 let svgImage = undefined;
 let Player1img = new Image();
-Player1img.src = "/templates/img/Piont 1.svg";
+Player1img.src = "/templates/img/pion bleu.png";
 let Player2img = new Image();
-Player2img.src = "/templates/img/Piont 2.svg";
+Player2img.src = "/templates/img/pion vert.png";
 let Player3img = new Image();
-Player3img.src = "/templates/img/Piont 3.svg";
+Player3img.src = "/templates/img/pion jaune.png";
 let Player4img = new Image();
-Player4img.src = "/templates/img/Piont 4.svg";
+Player4img.src = "/templates/img/pion rouge.png";
 
 const PrintPlayers = ()=>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(svgImage, 0, 0);
+    ctx.drawImage(svgImage, 0, 0,widthimg,heightimg);
     for (let i=0;i<Players.length;i++){
         console.log(Players[i].x, Players[i].y)
         ctx.fillStyle = Players[i].color;
@@ -384,6 +384,17 @@ const MovePlayerCase = (id,nbrCase)=>{
             }
         }
     }
+    if (player.win == true){
+        var div = document.createElement("div");
+        div.className = "win modal";
+        div.innerHTML = "Le joueur "+player.id+" a gagné";
+        div.style.fontSize = "50px";
+        document.getElementById("gameboard").appendChild(div);
+        setTimeout(()=> {
+            window.location.reload
+        },5000)
+    }
+
     PrintPlayers();
     
 
@@ -508,21 +519,35 @@ function getQuestion(dif){
         return getQuestion()
     }
 }
+const GetColor = (player) => {
+    if (player == 1){
+        return "bleu choisis la difficulté"
+    }else if (player == 2){
+        return "vert choisis la difficulté"
+    }else if (player == 3){
+        return "jaune choisis la difficulté"
+    }else if (player == 4){
+        return "rouge choisis la difficulté"
+    }}
 const GoodAnswer = (question,dif,choice) => {
     if (question.isCorrectAnswer(choice)){
-        document.getElementById("question").hidden = true;
+        document.getElementById("question").style.display = "none";
         document.getElementById("modal").style.display = "none"
-        setTimeout(()=>{document.getElementById("modal").style.display = "flex";document.getElementById("difficulte").style.display="flex";document.getElementById("diff").innerText="Player "+CurrentPlayer},5000)
+        setTimeout(()=>{
+            document.getElementById("modal").style.display = "flex";
+            document.getElementById("difficulte").style.display="flex";
+            document.getElementById("diff").innerText="Joueur "+GetColor(CurrentPlayer)
+        },5000)
         //document.getElementById("difficulte").style.display="flex"
         MovePlayerCase(CurrentPlayer,dif)
     }else{
-        document.getElementById("question").hidden = true;
+        document.getElementById("question").style.display = "none";
         document.getElementById("difficulte").style.display="flex"
         CurrentPlayer = CurrentPlayer+1
         if (CurrentPlayer>NbrPlayer){
             CurrentPlayer = 1;
         }
-        document.getElementById("diff").innerText="Player "+CurrentPlayer
+        document.getElementById("diff").innerText="Joueur "+GetColor(CurrentPlayer)
     }
     
 }
@@ -532,23 +557,31 @@ function displayQuestion(dif){
      */
     var question = getQuestion(dif)
     console.log(question)
-    document.getElementById("question").hidden = false
+    document.getElementById("question").style.display = "flex";
     document.getElementById("question_text").innerText = question.text
     document.getElementById("choix1").innerText = question.choices1
     document.getElementById("choix2").innerText = question.choices2
     document.getElementById("choix3").innerText = question.choices3
     document.getElementById("choix4").innerText = question.choices4
-    if (question.choices1 == undefined){
+    document.getElementById("choix1").style.display = "flex"
+    document.getElementById("choix2").style.display = "flex"
+    document.getElementById("choix3").style.display = "flex"
+    document.getElementById("choix4").style.display = "flex"
+    if (question.choices1 == undefined || question.choices1 == "" ){
         document.getElementById("choix1").innerText = ""
+        document.getElementById("choix1").style.display = "none"
     }
-    if (question.choices2 == undefined){
+    if (question.choices2 == undefined || question.choices2 == "" ){
         document.getElementById("choix2").innerText = ""
+        document.getElementById("choix2").style.display = "none"
     }
-    if (question.choices3 == undefined){
+    if (question.choices3 == undefined || question.choices3 == "" ){
         document.getElementById("choix3").innerText = ""
+        document.getElementById("choix3").style.display = "none"
     }
-    if (question.choices4 == undefined){
+    if (question.choices4 == undefined || question.choices4 == "" ){
         document.getElementById("choix4").innerText = ""
+        document.getElementById("choix4").style.display = "none"
     }
     document.getElementById("choix1").value = question.choices1
     document.getElementById("choix2").value = question.choices2

@@ -4,51 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='./templates/css/style.css' rel='stylesheet'>
+    <link href='./templates/css/index.css' rel='stylesheet'>
     <title>T'as pigé</title>
 </head>
-<body>
+<body id="reset">
     <header>
         <div id="logo">
             <a href="/"><img src="./templates/img/logo.png" alt="logo" height="100px"></a>
         </div>
         <div id="nav">
-            <a class="nav_items blue" href="/" >Accueil</a>
+            <a class="nav_items blue" href="/" >Nouveau</a>
             <a class="nav_items vert" href="/" >Réglement</a>
             <a class="nav_items jaune" href="/" >Contact</a>
         </div>
     </header>
     <div id="main">
-        <h1 class="annim">TAPIGÉ <div class="roller">
+        <h1 class="annim"><img src="./templates/img/logo.png" alt="logo" height="300px" ><div class="roller">
           <span id="rolltext">LEARN<br/>
           SEO<br/>
           FUN<br/>
-          <span id="spare-time">Are you ready<img src="./templates/img/logo.png" alt="logo" height="25px"></span><br/>
+          <span id="spare-time">ready<img src="./templates/img/logo.png" alt="logo" height="25px"></span><br/>
           </div>
         </h1>
         <div id="goo">
-            <p class="boutton_text">PLAY</p>
+            <img src="./templates/img/triangle.png" alt="logo" height="100px" >
         </div>  
-        <!-- <video id="video" controls autoplay muted>
+        <video id="video" controls autoplay muted>
             <source src="./templates/img/Render.mp4" type="video/mp4">
             Your browser does not support the video tag.
-        </video>  -->
+        </video> 
     </div>
     <div id="game_set">
         <div id="nmbr">
-            <h1 id="set">Nombre d'équipe</h1>
+            <h1 id="set">Nombre d'équipes</h1>
             <div id="choixj">
                 <h4 id="j2" class="joueur joueur2 ">2</h4>
                 <h4 id="j3" class="joueur joueur3 ">3</h4>
                 <h4 id="j4" class="joueur joueur4_clicked ">4</h4>
             </div>
-            <h5 id="start"><span class="boutton_text">Commencer</span></h5>
+            <h5 id="start"><img src="./templates/img/triangle.png" alt="logo" height="50px" ></h5>
         </div>
     </div>
     <div id="gameboard">
         <div class="modal" id="modal">
         <div id="difficulte">
-            <h1 id="diff">Player 1</h1>
+            <h1 id="diff">joueur bleu choisis la difficulté</h1>
             <div id="choixdifficulte">
                 <div class="choixdifficulte1">
                 <img src = "./templates/img/carte 1.svg" id="d1" class="difficulte difficulte1_clicked" alt="difficulte1"></img>
@@ -62,15 +62,17 @@
                 </div>
             </div>
         </div>
-        <div id="question" hidden>
+        <div id="question" >
             <h1 id="question_text"></h1>
-            <div id="choix1" class="choix"></div>
-            <div id="choix2" class="choix"></div>
-            <div id="choix3" class="choix"></div>
-            <div id="choix4" class="choix"></div>
+            <div class="reponse">
+            <div id="choix1" class="choix btn"></div>
+            <div id="choix2" class="choix btn"></div>
+            <div id="choix3" class="choix btn"></div>
+            <div id="choix4" class="choix btn"></div>
+            </div>
         </div>
         </div>
-        <canvas id="canvas" width="556" height="500"></canvas>
+        <canvas id="canvas" width="800" height="720"></canvas>
     </div>
     <script src='./templates/js/style.js'></script>
 </body>

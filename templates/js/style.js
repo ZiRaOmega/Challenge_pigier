@@ -575,7 +575,7 @@ const GoodAnswer = (question,dif,choice) => {
         document.getElementById("faux").style.display = "flex";
         document.getElementById("faux").innerHTML = `<img src="./templates/img/faux.gif" alt="Mauvaise réponse">`
         setTimeout(()=>{
-            document.getElementById("difficulte").style.display="flex"
+            setTimeout(()=>{document.getElementById("difficulte").style.display="flex"},2000)
             document.getElementById("faux").style.display = "none";
         },2500)
         CurrentPlayer = CurrentPlayer+1

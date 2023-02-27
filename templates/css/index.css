@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Alkalami');
-@import url('http://fonts.cdnfonts.com/css/unifrakturmaguntia');
+@import url('https://fonts.cdnfonts.com/css/unifrakturmaguntia');
 body {
     margin: 0;
     padding: 0;
@@ -144,6 +144,7 @@ header {
 
 #video{
     position: absolute;
+    width: 100vw;
 }
 
 .annim{
@@ -197,6 +198,12 @@ header {
     top: -12.25rem;
   }
 }
+@media screen and (max-width: 1800px){
+#video{
+    position: absolute;
+    height: 100vh;
+}
+}
 
 @media screen and (max-width: 600px){
   #spare-time>img{
@@ -243,8 +250,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background-color: white;
   border: 5px solid #0f9d58;
   border-radius: 50%;
@@ -308,9 +315,7 @@ header {
   z-index: -1;
   overflow: hidden;
 }
-video {
-  pointer-events: none;
-}
+
 #gameboard{
     height:100vh;
     width:100%;  
@@ -325,7 +330,7 @@ video {
 }
 
 #nmbr{
-  height: clamp(150px,55vh,600px);
+  height: clamp(150px,60vh,600px);
   width: clamp(200px,70vw,800px);
   background-color: rgba(255,255,255,0.9) ;
   display: flex;

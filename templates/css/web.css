@@ -201,10 +201,10 @@ header {
 }
 @media screen and (max-width: 1800px){
     .btn{
-        font-size: 150%;
+        font-size: 150% !important;
     }
     #question_text {
-    font-size: 200%;
+    font-size: 200% !important;
     }
 #video{
     position: absolute;
@@ -220,11 +220,31 @@ header {
 }
 
 @media screen and (max-width: 600px){
+    #start{
+        width: 50px !important;
+        height: 50px !important;
+    }
+    #start img{
+        height: 25px !important;
+    }
+    #goo{
+        width: 50px !important;
+        height: 50px !important;
+    }
+    #vrai img{
+        height: 300px !important;
+     }
+     #faux img{
+        height: 300px !important;
+     }
+    #goo img{
+        height: 25px !important;
+    }
     .btn{
-        font-size: 90%;
+        font-size: 90% !important;
     }
     #question_text {
-        font-size: 100%;
+        font-size: 100% !important;
         }
     .choixdifficulte1 img {
         height: 100px;
@@ -655,6 +675,12 @@ header {
     position: absolute;
     display: none;
     z-index: 3;
+ }
+ #vrai img{
+    height: 600px;
+ }
+ #faux img{
+    height: 600px;
  }
  #faux{
     position: absolute;
